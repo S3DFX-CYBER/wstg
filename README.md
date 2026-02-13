@@ -129,10 +129,12 @@ https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
 ## अन्य अनुवाद
 
-- Portuguese (BR)  
-- Russian  
-- Persian (Farsi)  
-- Turkish  
+- [Portuguese-BR](https://github.com/doverh/wstg-translations-pt)
+- [Russian](https://github.com/andrettv/WSTG/tree/master/WSTG-ru)
+- [Persian (Farsi)](https://github.com/whoismh11/owasp-wstg-fa)
+- [Turkish](https://github.com/enoskom/Owasp-wstg)
+- [Spanish](https://github.com/frangelbarrera/wstg)
+- [Hindi](https://github.com/S3DFX-CYBER/wstg)
 
 ---
 
