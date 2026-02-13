@@ -10,8 +10,7 @@
 इस अनुवाद का उद्देश्य सामग्री को सरल, स्पष्ट और आसानी से समझने योग्य हिंदी में उपलब्ध कराना है, ताकि छात्र, डेवलपर्स और सुरक्षा पेशेवर बिना भाषा की बाधा के इसे सीख सकें।
 
 - यह अनुवाद OWASP Web Security Testing Guide (WSTG) के आधिकारिक repo             (https://github.com/OWASP/wstg) पर आधारित है।
-
-हम वर्तमान में **संस्करण 5.0** पर काम कर रहे हैं। आप [वर्तमान दस्तावेज़ यहाँ GitHub पर पढ़ सकते हैं](https://github.com/OWASP/wstg/tree/master/document)।
+- `/document/`में मौजूद सभी दस्तावेज़ों का हिंदी में अनुवाद किया गया है।
 
 अंतिम स्थिर रिलीज़ के लिए, [रिलीज़ 4.2 देखें](https://github.com/OWASP/wstg/releases/tag/v4.2)। [ऑनलाइन](https://owasp.org/www-project-web-security-testing-guide/v42/) भी उपलब्ध है।
 
