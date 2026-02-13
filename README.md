@@ -14,7 +14,7 @@
 
 सुझाव और सुधार का स्वागत है! कृपया अपने सुझाव Issue या Pull Request के रूप में भेजें।
 
-संरक्षक (Maintainer): @S3DFX-CYBER
+संरक्षक (Maintainer): https://github.com/S3DFX-CYBER 
 
 यदि आप इस अनुवाद का उपयोग रिपोर्ट, प्रस्तुति या प्रशिक्षण में करते हैं, तो कृपया हमें श्रेय (credit) दें।
 
@@ -33,7 +33,7 @@ WSTG एक पूरी गाइड है जो वेब एप्लिक
 हम अभी **Version 5.0** पर काम कर रहे हैं।  
 
 - वर्तमान ड्राफ्ट देखें:  
-https://github.com/OWASP/wstg/tree/master/document  
+(https://github.com/OWASP/wstg/tree/master/document) 
 
 नवीनतम स्थिर संस्करण:  
 
@@ -115,9 +115,8 @@ https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
 ## प्रोजेक्ट लीडर्स
 
-- Rick Mitchell  
-- Elie Saad  
-
+- [Rick Mitchell](https://github.com/kingthorin)
+- [Elie Saad](https://github.com/ThunderSon)
 ---
 
 ## मुख्य टीम
