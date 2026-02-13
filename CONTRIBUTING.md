@@ -1,160 +1,158 @@
-# Contributing to the Testing Guide
+# टेस्टिंग गाइड में योगदान
 
-Thank you for considering contributing to the Web Security Testing Guide (WSTG)!
+वेब सिक्योरिटी टेस्टिंग गाइड (WSTG) में योगदान करने पर विचार करने के लिए धन्यवाद!
 
-Here are some ways you can make a helpful contribution. The [Open Source Guide for why and how to contribute](https://opensource.guide/how-to-contribute/) is also a good resource. You will need a [GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) in order to help out.
+यहां कुछ तरीके हैं जिनसे आप उपयोगी योगदान दे सकते हैं। [ओपन सोर्स गाइड](https://opensource.guide/how-to-contribute/) भी एक अच्छा संसाधन है। आपको मदद करने के लिए एक [GitHub खाता](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) चाहिए होगा।
 
-- [Become an Author](#become-an-author)
-- [Become a Reviewer or Editor](#become-a-reviewer-or-editor)
-    - [Technical Review](#technical-review)
-    - [Editorial Review](#editorial-review)
-- [How to Open an Issue](#how-to-open-an-issue)
-- [How to Submit a Pull Request](#how-to-submit-a-pull-request)
-- [How to Set Up Your Contributor Environment](#how-to-set-up-your-contributor-environment)
-- [Contributing with GitHub Dev Environments](#contributing-with-github-dev-environments)
+- [लेखक बनें](#लेखक-बनें)
+- [समीक्षक या संपादक बनें](#समीक्षक-या-संपादक-बनें)
+    - [तकनीकी समीक्षा](#तकनीकी-समीक्षा)
+    - [संपादकीय समीक्षा](#संपादकीय-समीक्षा)
+- [इश्यू कैसे खोलें](#इश्यू-कैसे-खोलें)
+- [पुल रिक्वेस्ट कैसे सबमिट करें](#पुल-रिक्वेस्ट-कैसे-सबमिट-करें)
+- [अपना योगदानकर्ता वातावरण कैसे सेट करें](#अपना-योगदानकर्ता-वातावरण-कैसे-सेट-करें)
+- [GitHub Dev Environments के साथ योगदान](#github-dev-environments-के-साथ-योगदान)
 
-## Become an Author
+## लेखक बनें
 
-This project would not be possible without the contributions of writers in the security community! Our authors help to keep the WSTG relevant and useful for everyone.
+यह प्रोजेक्ट सिक्योरिटी कम्युनिटी के लेखकों के योगदान के बिना संभव नहीं होगा! हमारे लेखक WSTG को सभी के लिए प्रासंगिक और उपयोगी बनाए रखने में मदद करते हैं।
 
-Whether you are submitting a new section or adding information to an existing one, please follow the [template example](template/999-Foo_Testing/1-Testing_for_a_Cat_in_a_Box.md). The [template sections are explained here](template/999-Foo_Testing/2-Template_Explanation.md).
+चाहे आप एक नया सेक्शन सबमिट कर रहे हों या मौजूदा में जानकारी जोड़ रहे हों, कृपया [टेम्पलेट उदाहरण](template/999-Foo_Testing/1-Testing_for_a_Cat_in_a_Box.md) का पालन करें। [टेम्पलेट सेक्शन यहां समझाए गए हैं](template/999-Foo_Testing/2-Template_Explanation.md)।
 
-When submitting your [pull request](#how-to-submit-a-pull-request), authors should link contributions to an issue:
+अपना [पुल रिक्वेस्ट](#पुल-रिक्वेस्ट-कैसे-सबमिट-करें) सबमिट करते समय, लेखकों को योगदान को एक इश्यू से लिंक करना चाहिए:
 
-1. Open an [Add New Content issue](https://github.com/OWASP/wstg/issues/new?assignees=&labels=New&template=new-content.md&title=), or choose an [unassigned new content issue](https://github.com/OWASP/wstg/issues?q=is%3Aopen+is%3Aissue+label%3ANew+no%3Aassignee) and ask to be assigned to it.
-2. Create and switch to a new local branch with the name `new-<issue number>`. For example, `git checkout -b new-164`.
+1. एक [Add New Content इश्यू](https://github.com/OWASP/wstg/issues/new?assignees=&labels=New&template=new-content.md&title=) खोलें, या एक [unassigned new content इश्यू](https://github.com/OWASP/wstg/issues?q=is%3Aopen+is%3Aissue+label%3ANew+no%3Aassignee) चुनें और इसे असाइन करने के लिए कहें।
+2. `new-<issue number>` नाम से एक नई लोकल ब्रांच बनाएं और स्विच करें। उदाहरण: `git checkout -b new-164`।
 
-## Become a Reviewer or Editor
+## समीक्षक या संपादक बनें
 
-Keeping the project up to date and looking spiffy is a group effort! The WSTG is a constantly updated document and benefits from your technical or editorial review.
+प्रोजेक्ट को अप टू डेट और बेहतर रखना एक सामूहिक प्रयास है! WSTG एक लगातार अपडेट होने वाला दस्तावेज है और आपकी तकनीकी या संपादकीय समीक्षा से लाभान्वित होता है।
 
-When submitting your [pull request](#how-to-submit-a-pull-request), reviewers and editors should link contributions to an issue:
+अपना [पुल रिक्वेस्ट](#पुल-रिक्वेस्ट-कैसे-सबमिट-करें) सबमिट करते समय, समीक्षक और संपादक को योगदान को एक इश्यू से लिंक करना चाहिए:
 
-1. Choose an [open issue with the `help wanted` label](https://github.com/OWASP/wstg/labels/help%20wanted) to work on, or [open an issue](https://github.com/OWASP/wstg/issues/new/choose) yourself. Post a comment in the issue and request to be assigned to it.
-2. Create and switch to a new local branch with the name `fix-<issue number>`. For example, `git checkout -b fix-88`.
+1. काम करने के लिए [`help wanted` लेबल वाला एक खुला इश्यू](https://github.com/OWASP/wstg/labels/help%20wanted) चुनें, या खुद [एक इश्यू खोलें](https://github.com/OWASP/wstg/issues/new/choose)। इश्यू में एक कमेंट पोस्ट करें और इसे असाइन करने का अनुरोध करें।
+2. `fix-<issue number>` नाम से एक नई लोकल ब्रांच बनाएं और स्विच करें। उदाहरण: `git checkout -b fix-88`।
 
-### Technical Review
+### तकनीकी समीक्षा
 
-If you have expertise in any topic covered by the WSTG, your technical review is encouraged. Please ensure that articles:
+यदि आपके पास WSTG द्वारा कवर किए गए किसी भी विषय में विशेषज्ञता है, तो आपकी तकनीकी समीक्षा का स्वागत है। कृपया सुनिश्चित करें कि लेख:
 
-- Follow the [article template materials](template)
-- Follow the [style guide](style_guide.md)
-- Accurately describe vulnerabilities and tests
-- Have appropriate and up-to-date inline links to resources
-- Provide complete and relevant information suitable for an audience with basic technical expertise
+- [आर्टिकल टेम्पलेट सामग्री](template) का पालन करें
+- [स्टाइल गाइड](style_guide.md) का पालन करें
+- कमजोरियों और टेस्ट का सटीक वर्णन करें
+- संसाधनों के लिए उपयुक्त और अप-टू-डेट इनलाइन लिंक हों
+- बुनियादी तकनीकी विशेषज्ञता वाले दर्शकों के लिए पूर्ण और प्रासंगिक जानकारी प्रदान करें
 
-### Editorial Review
+### संपादकीय समीक्षा
 
-Grammarians assemble! The WSTG welcomes your improvements in the areas of grammar, formatting, word choice, and brevity. All changes should adhere to the [style guide](style_guide.md).
+व्याकरण विशेषज्ञों का स्वागत है! WSTG व्याकरण, फॉर्मेटिंग, शब्द चयन और संक्षिप्तता के क्षेत्रों में आपके सुधारों का स्वागत करता है। सभी परिवर्तनों को [स्टाइल गाइड](style_guide.md) का पालन करना चाहिए।
 
-Please don't hesitate to make as many changes as you see fit, especially if you notice that existing content does not match the [article template materials](template).
+कृपया जितने भी बदलाव उचित लगें, करने में संकोच न करें, खासकर यदि आप देखते हैं कि मौजूदा सामग्री [आर्टिकल टेम्पलेट सामग्री](template) से मेल नहीं खाती।
 
-### Translation
+### अनुवाद
 
-Due to challenges with syncing images and removed content, the WSTG is no longer tackling in-bound translation efforts directly.
+इमेज और हटाई गई सामग्री को सिंक करने की चुनौतियों के कारण, WSTG अब सीधे इन-बाउंड अनुवाद प्रयासों से नहीं निपट रहा है।
 
-At this time we suggest that you start another repository in which to tackle translations of a specific language. Once you've produced a PDF for a given version of the guide we'll be happy to attach it to the appropriate release. Simply [open an issue](https://github.com/OWASP/wstg/issues/new) here asking us to do so.
+इस समय हम सुझाव देते हैं कि आप एक विशिष्ट भाषा के अनुवाद को संभालने के लिए एक अन्य रिपॉजिटरी शुरू करें। एक बार जब आप गाइड के किसी दिए गए वर्जन के लिए एक PDF तैयार कर लेते हैं, तो हम खुशी से इसे उपयुक्त रिलीज़ से संलग्न करेंगे। बस हमसे ऐसा करने के लिए [यहां एक इश्यू खोलें](https://github.com/OWASP/wstg/issues/new)।
 
-Also we're willing to list your translation repository, just [let us know](https://github.com/OWASP/wstg/issues/new) where it is.
+साथ ही हम आपकी अनुवाद रिपॉजिटरी को सूचीबद्ध करने के लिए तैयार हैं, बस [हमें बताएं](https://github.com/OWASP/wstg/issues/new) कि यह कहां है।
 
-## How to Open an Issue
+## इश्यू कैसे खोलें
 
-[Create an issue](https://github.com/OWASP/wstg/issues/new/choose) using the appropriate template.
+उपयुक्त टेम्पलेट का उपयोग करके [एक इश्यू बनाएं](https://github.com/OWASP/wstg/issues/new/choose)।
 
-Choose a short, descriptive title. Briefly explain what you think needs changing. Among other things, your suggestions may include grammar or spelling errors, or address insufficient or outdated content.
+एक छोटा, वर्णनात्मक शीर्षक चुनें। संक्षेप में बताएं कि आपको क्या बदलने की आवश्यकता है। अन्य बातों के अलावा, आपके सुझावों में व्याकरण या वर्तनी की त्रुटियां शामिल हो सकती हैं, या अपर्याप्त या पुरानी सामग्री को संबोधित कर सकती हैं।
 
-## How to Submit a Pull Request
+## पुल रिक्वेस्ट कैसे सबमिट करें
 
-Here are the steps for creating and submitting a Pull Request (PR) that we can quickly review and merge.
+यहां एक पुल रिक्वेस्ट (PR) बनाने और सबमिट करने के चरण हैं जिसे हम जल्दी से रिव्यू और मर्ज कर सकते हैं।
 
-1. [Set up your environment](#how-to-set-up-your-contributor-environment) to fork the project and install a Markdown linter.
-2. Associate your contribution with an [issue](https://github.com/OWASP/wstg/issues). To change existing content, read [Become a Reviewer or Editor](#become-a-reviewer-or-editor). To make additions, read [Become an Author](#become-an-author).
-3. Make your modifications. Be sure to follow our [style guide](style_guide.md).
-4. When you're ready to submit your work, push your changes to your fork. Ensure that your fork is [synced with `master`](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
-5. You can submit a [draft PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests) or a [regular PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork). If your work is not yet ready for review and merge, choose a draft PR. When your changes are ready to be reviewed, you can convert to a regular PR. See [how to change the stage of a PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-stage-of-a-pull-request) for more.
+1. प्रोजेक्ट को फोर्क करने और Markdown लिंटर इंस्टॉल करने के लिए [अपना वातावरण सेट करें](#अपना-योगदानकर्ता-वातावरण-कैसे-सेट-करें)।
+2. अपने योगदान को एक [इश्यू](https://github.com/OWASP/wstg/issues) से जोड़ें। मौजूदा सामग्री बदलने के लिए, [समीक्षक या संपादक बनें](#समीक्षक-या-संपादक-बनें) पढ़ें। नई सामग्री जोड़ने के लिए, [लेखक बनें](#लेखक-बनें) पढ़ें।
+3. अपने संशोधन करें। हमारे [स्टाइल गाइड](style_guide.md) का पालन करना सुनिश्चित करें।
+4. जब आप अपना काम सबमिट करने के लिए तैयार हों, तो अपने बदलावों को अपने फोर्क में पुश करें। सुनिश्चित करें कि आपका फोर्क [`master` के साथ सिंक](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) है।
+5. आप एक [ड्राफ्ट PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests) या [रेगुलर PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) सबमिट कर सकते हैं। यदि आपका काम अभी रिव्यू और मर्ज के लिए तैयार नहीं है, तो ड्राफ्ट PR चुनें। जब आपके बदलाव रिव्यू के लिए तैयार हों, तो आप रेगुलर PR में बदल सकते हैं।
 
-You may want to [allow edits from maintainers](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) so we can help with small changes like fixing typos.
+आप [मेंटेनर्स से एडिट की अनुमति](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) देना चाह सकते हैं ताकि हम टाइपो ठीक करने जैसे छोटे बदलावों में मदद कर सकें।
 
-Once you've submitted your ready-for-review PR, we'll review it. We may comment to ask for clarification or changes, so please check back in the next few days.
+एक बार जब आप अपना रेडी-फॉर-रिव्यू PR सबमिट कर देते हैं, हम इसकी समीक्षा करेंगे। हम स्पष्टीकरण या बदलाव मांगने के लिए कमेंट कर सकते हैं, इसलिए कृपया अगले कुछ दिनों में वापस जांचें।
 
-To increase the chances that your PR is merged, please make sure that:
+अपने PR के मर्ज होने की संभावना बढ़ाने के लिए, कृपया सुनिश्चित करें कि:
 
-1. You've followed the guidelines above for associating your work with an issue.
-2. Your work is Markdown linted.
-3. Your writing follows the [article template materials](template) and [style guide](style_guide.md).
-4. Your code snippets are correct, well-tested, and commented where necessary for understanding.
+1. आपने अपने काम को एक इश्यू से जोड़ने के लिए ऊपर दिए गए दिशानिर्देशों का पालन किया है।
+2. आपका काम Markdown लिंट किया गया है।
+3. आपका लेखन [आर्टिकल टेम्पलेट सामग्री](template) और [स्टाइल गाइड](style_guide.md) का पालन करता है।
+4. आपके कोड स्निपेट सही, अच्छी तरह से परीक्षित हैं, और समझ के लिए आवश्यक जगह पर कमेंट किए गए हैं।
 
-Once the PR is complete, we'll merge it! At that point, you may like to add yourself to [the project's list of authors, reviewers, or editors](document/1-Frontispiece/README.md).
+एक बार PR पूर्ण हो जाने पर, हम इसे मर्ज कर देंगे! उस समय, आप खुद को [प्रोजेक्ट के लेखकों, समीक्षकों या संपादकों की सूची](document/1-Frontispiece/README.md) में जोड़ना चाह सकते हैं।
 
-## How to Set Up Your Contributor Environment
+## अपना योगदानकर्ता वातावरण कैसे सेट करें
 
-We've made it easy to get started! The repository includes configuration files for Visual Studio Code and other editors to help you maintain consistency with the project's style guide.
+हमने शुरुआत करना आसान बना दिया है! रिपॉजिटरी में Visual Studio Code और अन्य एडिटर के लिए कॉन्फ़िगरेशन फ़ाइलें शामिल हैं जो आपको प्रोजेक्ट की स्टाइल गाइड के साथ स्थिरता बनाए रखने में मदद करती हैं।
 
-1. [Create an account on GitHub](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
-2. Fork and clone your own copy of the repository. Here are complete instructions for [forking and syncing with GitHub](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
-3. Choose your development environment:
+1. [GitHub पर एक खाता बनाएं](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account)।
+2. रिपॉजिटरी की अपनी कॉपी फोर्क और क्लोन करें। यहां [GitHub के साथ फोर्किंग और सिंकिंग के लिए पूर्ण निर्देश](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) हैं।
+3. अपना डेवलपमेंट वातावरण चुनें:
 
-### Using Visual Studio Code
+### Visual Studio Code का उपयोग करना
 
-Visual Studio Code is recommended for the best experience. The repository includes pre-configured settings in the `.vscode` directory.
+सर्वोत्तम अनुभव के लिए Visual Studio Code की सिफारिश की जाती है। रिपॉजिटरी में `.vscode` डायरेक्टरी में पूर्व-कॉन्फ़िगर की गई सेटिंग्स शामिल हैं।
 
-1. Install [Visual Studio Code](https://code.visualstudio.com/).
-2. Open the cloned repository in Visual Studio Code.
-3. When prompted, install the recommended extensions from `.vscode/extensions.json`. These include:
-    - **markdownlint**: Ensures Markdown files follow the project's style guide
-    - **Markdown All in One**: Provides helpful Markdown editing features
-    - **Code Spell Checker**: Catches spelling errors
-    - **Prettier**: Code formatter
-    - **GitHub Pull Request**: Manage PRs directly from Visual Studio Code
+1. [Visual Studio Code](https://code.visualstudio.com/) इंस्टॉल करें।
+2. Visual Studio Code में क्लोन की गई रिपॉजिटरी खोलें।
+3. जब संकेत मिले, तो `.vscode/extensions.json` से अनुशंसित एक्सटेंशन इंस्टॉल करें। इनमें शामिल हैं:
+    - **markdownlint**: सुनिश्चित करता है कि Markdown फ़ाइलें प्रोजेक्ट की स्टाइल गाइड का पालन करती हैं
+    - **Markdown All in One**: उपयोगी Markdown एडिटिंग सुविधाएँ प्रदान करता है
+    - **Code Spell Checker**: स्पेलिंग त्रुटियों को पकड़ता है
+    - **Prettier**: कोड फॉर्मेटर
+    - **GitHub Pull Request**: Visual Studio Code से सीधे PR प्रबंधित करें
 
-4. The workspace settings in `.vscode/settings.json` will automatically configure markdownlint to use the project's configuration file at `.github/configs/.markdownlint.json`.
+4. `.vscode/settings.json` में वर्कस्पेस सेटिंग्स स्वचालित रूप से markdownlint को `.github/configs/.markdownlint.json` पर प्रोजेक्ट की कॉन्फ़िगरेशन फ़ाइल का उपयोग करने के लिए कॉन्फ़िगर करेंगी।
 
-### Using Other Editors
+### अन्य एडिटर का उपयोग करना
 
-If you're using a different editor, the `.editorconfig` file will help maintain consistent formatting across different editors. Most modern editors support EditorConfig either natively or via plugins:
+यदि आप एक अलग एडिटर का उपयोग कर रहे हैं, तो `.editorconfig` फ़ाइल विभिन्न एडिटर में सुसंगत फॉर्मेटिंग बनाए रखने में मदद करेगी। अधिकांश आधुनिक एडिटर EditorConfig का समर्थन करते हैं:
 
-- **Vim/Neovim**: Install [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
-- **Sublime Text**: Install [EditorConfig](https://packagecontrol.io/packages/EditorConfig)
-- **Atom**: Install [EditorConfig](https://atom.io/packages/editorconfig)
-- **IntelliJ/WebStorm**: Built-in support
+- **Vim/Neovim**: [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) इंस्टॉल करें
+- **Sublime Text**: [EditorConfig](https://packagecontrol.io/packages/EditorConfig) इंस्टॉल करें
+- **Atom**: [EditorConfig](https://atom.io/packages/editorconfig) इंस्टॉल करें
+- **IntelliJ/WebStorm**: बिल्ट-इन सपोर्ट
 
-### Running the Linter Locally
+### लिंटर को लोकली रन करना
 
-To ensure your changes follow the project's Markdown style guide, you can run the linter locally:
+यह सुनिश्चित करने के लिए कि आपके बदलाव प्रोजेक्ट की Markdown स्टाइल गाइड का पालन करते हैं, आप लिंटर को लोकली रन कर सकते हैं:
 
-1. Install dependencies (requires [Node.js](https://nodejs.org/)):
-
-    ```bash
+1. डिपेंडेंसीज इंस्टॉल करें ([Node.js](https://nodejs.org/) की आवश्यकता है):
+```bash
     npm install
-    ```
+```
 
-2. Run the linter:
-
-    ```bash
+2. लिंटर रन करें:
+```bash
     npm run lint
-    ```
+```
 
-The linter will check all Markdown files and report any style issues that need to be fixed before submitting your pull request.
+लिंटर सभी Markdown फ़ाइलों की जांच करेगा और किसी भी स्टाइल समस्या की रिपोर्ट करेगा जिसे आपके पुल रिक्वेस्ट सबमिट करने से पहले ठीक करने की आवश्यकता है।
 
-## Contributing with GitHub Dev Environments
+## GitHub Dev Environments के साथ योगदान
 
-You can use GitHub's cloud-based development environments (Codespaces and github.dev) to contribute to this repository without setting up a local environment!
+आप लोकल वातावरण सेट किए बिना इस रिपॉजिटरी में योगदान करने के लिए GitHub के क्लाउड-आधारित डेवलपमेंट वातावरण (Codespaces और github.dev) का उपयोग कर सकते हैं!
 
-### Using github.dev
+### github.dev का उपयोग करना
 
-For quick edits, you can use the github.dev web-based editor:
+त्वरित संपादन के लिए, आप github.dev वेब-आधारित एडिटर का उपयोग कर सकते हैं:
 
-1. Navigate to the repository on GitHub.
-2. Press `.` (period) on your keyboard to open the github.dev editor.
-3. Make your changes and commit them directly from the browser.
+1. GitHub पर रिपॉजिटरी पर जाएं।
+2. github.dev एडिटर खोलने के लिए अपने कीबोर्ड पर `.` (पीरियड) दबाएं।
+3. अपने बदलाव करें और उन्हें सीधे ब्राउज़र से कमिट करें।
 
-Note: The github.dev editor has limited support for running commands, so it's best for simple text edits. For testing linting and other scripts, use Codespaces or a local environment.
+नोट: github.dev एडिटर में कमांड चलाने के लिए सीमित सपोर्ट है, इसलिए यह सरल टेक्स्ट संपादन के लिए सबसे अच्छा है। लिंटिंग और अन्य स्क्रिप्ट के परीक्षण के लिए, Codespaces या लोकल वातावरण का उपयोग करें।
 
-### Using GitHub Codespaces
+### GitHub Codespaces का उपयोग करना
 
-GitHub Codespaces provides a full Visual Studio Code environment in the cloud with all recommended extensions pre-installed.
+GitHub Codespaces क्लाउड में सभी अनुशंसित एक्सटेंशन के साथ पूर्व-इंस्टॉल किया गया पूर्ण Visual Studio Code वातावरण प्रदान करता है।
 
-1. Learn more about [GitHub Codespaces](https://docs.github.com/en/codespaces/overview).
-2. Get started by [creating a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace) for this repository.
+1. [GitHub Codespaces](https://docs.github.com/en/codespaces/overview) के बारे में और जानें।
+2. इस रिपॉजिटरी के लिए [एक codespace बनाकर](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace) शुरू करें।
 
-Our `.vscode` configuration will automatically set up the workspace with the correct linting and formatting settings.
+हमारा `.vscode` कॉन्फ़िगरेशन स्वचालित रूप से सही लिंटिंग और फॉर्मेटिंग सेटिंग्स के साथ वर्कस्पेस सेट कर देगा।
