@@ -108,7 +108,8 @@ https://owasp.org/slack/invite
 
 ### अन्य प्लेटफॉर्म
 
- 𝕏(Twitter) [@owasp_wstg](https://x.com/owasp_wstg).
+ 𝕏(Twitter) [@owasp_wstg](https://x.com/owasp_wstg)
+
 Google Group:  
 https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
