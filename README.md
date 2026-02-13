@@ -1,85 +1,113 @@
-# OWASP Web Security Testing Guide
+# OWASP वेब सिक्योरिटी टेस्टिंग गाइड
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/OWASP/wstg/issues)
-[![OWASP Flagship](https://img.shields.io/badge/owasp-flagship-brightgreen.svg)](https://owasp.org/projects/)
+[![योगदान स्वागत है](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/OWASP/wstg/issues)
+[![OWASP फ्लैगशिप](https://img.shields.io/badge/owasp-flagship-brightgreen.svg)](https://owasp.org/projects/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/owasp_wstg?style=social)](https://x.com/owasp_wstg)
 
 [![Creative Commons License](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/ "CC BY-SA 4.0")
 
-Welcome to the official repository for the Open Worldwide Application Security Project® (OWASP®) Web Security Testing Guide (WSTG). The WSTG is a comprehensive guide to testing the security of web applications and web services. Created by the collaborative efforts of security professionals and dedicated volunteers, the WSTG provides a framework of best practices used by penetration testers and organizations all over the world.
+Open Worldwide Application Security Project® (OWASP®) वेब सिक्योरिटी टेस्टिंग गाइड (WSTG) के आधिकारिक रिपॉजिटरी में आपका स्वागत है।
 
-We are currently working on release version 5.0. You can [read the current document here on GitHub](https://github.com/OWASP/wstg/tree/master/document).
+WSTG वेब एप्लिकेशन और वेब सेवाओं की सुरक्षा परीक्षण के लिए एक व्यापक गाइड है। सिक्योरिटी प्रोफेशनल्स और समर्पित स्वयंसेवकों के सहयोगात्मक प्रयासों से बनाई गई, WSTG दुनिया भर के पेनेट्रेशन टेस्टर्स और संगठनों द्वारा उपयोग की जाने वाली सर्वोत्तम प्रथाओं का एक फ्रेमवर्क प्रदान करती है।
 
-For the last stable release, [check release 4.2](https://github.com/OWASP/wstg/releases/tag/v4.2). Also available [online](https://owasp.org/www-project-web-security-testing-guide/v42/).
+हम वर्तमान में **संस्करण 5.0** पर काम कर रहे हैं। आप [वर्तमान दस्तावेज़ यहाँ GitHub पर पढ़ सकते हैं](https://github.com/OWASP/wstg/tree/master/document)।
 
-- [How To Reference WSTG Scenarios](#how-to-reference-wstg-scenarios)
-    - [Linking](#linking)
-- [Contributions, Feature Requests, and Feedback](#contributions-feature-requests-and-feedback)
-- [Chat With Us](#chat-with-us)
-- [Project Leaders](#project-leaders)
-- [Core Team](#core-team)
-- [Translations](#translations)
+अंतिम स्थिर रिलीज़ के लिए, [रिलीज़ 4.2 देखें](https://github.com/OWASP/wstg/releases/tag/v4.2)। [ऑनलाइन](https://owasp.org/www-project-web-security-testing-guide/v42/) भी उपलब्ध है।
 
-## How To Reference WSTG Scenarios
+- [WSTG परिदृश्यों को कैसे संदर्भित करें](#wstg-परिदृश्यों-को-कैसे-संदर्भित-करें)
+    - [लिंकिंग](#लिंकिंग)
+- [योगदान, फीचर रिक्वेस्ट और फीडबैक](#योगदान-फीचर-रिक्वेस्ट-और-फीडबैक)
+- [हमसे बात करें](#हमसे-बात-करें)
+- [प्रोजेक्ट लीडर्स](#प्रोजेक्ट-लीडर्स)
+- [कोर टीम](#कोर-टीम)
+- [अनुवाद](#अनुवाद)
 
-Each scenario has an identifier in the format `WSTG-<category>-<number>`, where: 'category' is a 4 character upper case string that identifies the type of test or weakness, and 'number' is a zero-padded numeric value from 01 to 99. For example:`WSTG-INFO-02` is the second Information Gathering test.
+## WSTG परिदृश्यों को कैसे संदर्भित करें
 
-The identifiers may change between versions. Therefore, it is preferable that other documents, reports, or tools use the format: `WSTG-<version>-<category>-<number>`, where: 'version' is the version tag with punctuation removed. For example: `WSTG-v42-INFO-02` would be understood to mean specifically the second Information Gathering test from version 4.2.
+प्रत्येक परिदृश्य का एक पहचानकर्ता होता है जो इस प्रारूप में होता है: `WSTG-<category>-<number>`
 
-If identifiers are used without including the `<version>` element, they should be assumed to refer to the latest Web Security Testing Guide content. As the guide grows and changes this becomes problematic, which is why writers or developers should include the version element.
+जहाँ:
+- **'category'** = 4 अक्षरों की अपरकेस स्ट्रिंग जो टेस्ट या कमजोरी के प्रकार की पहचान करती है
+- **'number'** = 01 से 99 तक का एक संख्यात्मक मान
 
-### Linking
+**उदाहरण:** `WSTG-INFO-02` दूसरा Information Gathering टेस्ट है।
 
-Linking to Web Security Testing Guide scenarios should be done using versioned links not `stable` or `latest`, which will change with time. However, it is the project team's intention that versioned links do not change. For example: `https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server.html`. Note: the `v42` element refers to version 4.2.
+पहचानकर्ता संस्करणों के बीच बदल सकते हैं। इसलिए, बेहतर है कि अन्य दस्तावेज़, रिपोर्ट या टूल्स इस प्रारूप का उपयोग करें:
 
-## Contributions, Feature Requests, and Feedback
+`WSTG-<version>-<category>-<number>`
 
-We are actively inviting new contributors! To start, read the [contribution guide](CONTRIBUTING.md).
+जहाँ 'version' विराम चिह्न के बिना संस्करण टैग है।
 
-First time here? Here are [GitHub's suggestions for first-time contributors](https://github.com/OWASP/wstg/contribute) to this repository.
+**उदाहरण:** `WSTG-v42-INFO-02` का मतलब विशेष रूप से संस्करण 4.2 से दूसरा Information Gathering टेस्ट होगा।
 
-This project is only possible thanks to the work of many dedicated volunteers. Everyone is encouraged to help in ways large and small. Here are a few ways you can help:
+यदि पहचानकर्ताओं का उपयोग `<version>` तत्व शामिल किए बिना किया जाता है, तो उन्हें नवीनतम वेब सिक्योरिटी टेस्टिंग गाइड सामग्री को संदर्भित करने के लिए माना जाना चाहिए।
 
-- Read the current content and help us fix any spelling mistakes or grammatical errors.
-- Help with [translation](CONTRIBUTING.md#translation) efforts.
-- Choose an existing issue and submit a pull request to fix it.
-- Open a new issue to report an opportunity for improvement.
+जैसे-जैसे गाइड बढ़ती और बदलती है, यह समस्याग्रस्त हो जाता है, यही कारण है कि लेखकों या डेवलपर्स को संस्करण तत्व शामिल करना चाहिए।
 
-To learn how to contribute successfully, read the [contribution guide](CONTRIBUTING.md).
+### लिंकिंग
 
-Successful contributors appear on [the project's list of authors, reviewers, or editors](document/1-Frontispiece/README.md).
+वेब सिक्योरिटी टेस्टिंग गाइड परिदृश्यों से लिंक करना संस्करण वाले लिंक का उपयोग करके किया जाना चाहिए, न कि `stable` या `latest` का, जो समय के साथ बदल जाएगा।
 
-## Chat With Us
+हालांकि, प्रोजेक्ट टीम का इरादा है कि संस्करण वाले लिंक नहीं बदलते हैं।
 
-We're easy to find on Slack:
+**उदाहरण:**
+```
+https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server.html
+```
 
-1. Join the OWASP Group Slack with this [invitation link](https://owasp.org/slack/invite).
-2. Join this project's [channel, #testing-guide](https://app.slack.com/client/T04T40NHX/CJ2QDHLRJ).
+नोट: `v42` तत्व संस्करण 4.2 को संदर्भित करता है।
 
-Feel free to ask questions, suggest ideas, or share your best recipes.
+## योगदान, फीचर रिक्वेस्ट और फीडबैक
 
-You can @ us on 𝕏 (Twitter) [@owasp_wstg](https://x.com/owasp_wstg).
+हम सक्रिय रूप से नए योगदानकर्ताओं को आमंत्रित कर रहे हैं! शुरुआत करने के लिए, [योगदान गाइड](CONTRIBUTING.md) पढ़ें।
 
-You can also join our [Google Group](https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project).
+पहली बार यहाँ आए हैं? यहाँ इस रिपॉजिटरी में [पहली बार योगदानकर्ताओं के लिए GitHub के सुझाव](https://github.com/OWASP/wstg/contribute) हैं।
 
-## Project Leaders
+यह प्रोजेक्ट केवल कई समर्पित स्वयंसेवकों के काम के कारण ही संभव है। सभी को बड़े और छोटे तरीकों से मदद करने के लिए प्रोत्साहित किया जाता है।
+
+### आप कैसे मदद कर सकते हैं:
+
+- वर्तमान सामग्री पढ़ें और हमें किसी भी वर्तनी की गलतियों या व्याकरणिक त्रुटियों को ठीक करने में मदद करें
+- [अनुवाद](CONTRIBUTING.md#translation) प्रयासों में मदद करें
+- एक मौजूदा इश्यू चुनें और इसे ठीक करने के लिए एक पुल रिक्वेस्ट सबमिट करें
+- सुधार के अवसर की रिपोर्ट करने के लिए एक नया इश्यू खोलें
+
+सफलतापूर्वक योगदान करना सीखने के लिए, [योगदान गाइड](CONTRIBUTING.md) पढ़ें।
+
+सफल योगदानकर्ता [प्रोजेक्ट के लेखकों, समीक्षकों या संपादकों की सूची](document/1-Frontispiece/README.md) में दिखाई देते हैं।
+
+## हमसे बात करें
+
+हमें Slack पर खोजना आसान है:
+
+1. इस [आमंत्रण लिंक](https://owasp.org/slack/invite) के साथ OWASP Group Slack में शामिल हों
+2. इस प्रोजेक्ट के [चैनल, #testing-guide](https://app.slack.com/client/T04T40NHX/CJ2QDHLRJ) में शामिल हों
+
+बेझिझक सवाल पूछें, विचार सुझाएं, या अपने सर्वोत्तम अनुभव साझा करें।
+
+आप हमें 𝕏 (Twitter) पर [@owasp_wstg](https://x.com/owasp_wstg) पर भी टैग कर सकते हैं।
+
+आप हमारे [Google Group](https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project) में भी शामिल हो सकते हैं।
+
+## प्रोजेक्ट लीडर्स
 
 - [Rick Mitchell](https://github.com/kingthorin)
 - [Elie Saad](https://github.com/ThunderSon)
 
-## Core Team
+## कोर टीम
 
 - [Rejah Rehim](https://github.com/rejahrehim)
 - [Victoria Drake](https://github.com/victoriadrake)
 
-## Translations
+## अनुवाद
 
 - [Portuguese-BR](https://github.com/doverh/wstg-translations-pt)
 - [Russian](https://github.com/andrettv/WSTG/tree/master/WSTG-ru)
 - [Persian (Farsi)](https://github.com/whoismh11/owasp-wstg-fa)
 - [Turkish](https://github.com/enoskom/Owasp-wstg)
 - [Spanish](https://github.com/frangelbarrera/wstg)
+- [Hindi](https://github.com/S3DFX-CYBER/wstg)
 
 ---
 
-Open Worldwide Application Security Project and OWASP are registered trademarks of the OWASP Foundation, Inc.
+Open Worldwide Application Security Project और OWASP, OWASP Foundation, Inc. के पंजीकृत ट्रेडमार्क हैं।
