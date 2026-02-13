@@ -1,75 +1,59 @@
-# Contributor Covenant Code of Conduct
+# योगदानकर्ता आचार संहिता
 
-## Our Pledge
+## हमारी प्रतिबद्धता
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to make participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
+हम एक खुला और स्वागत योग्य माहौल बनाने के लिए प्रतिबद्ध हैं। योगदानकर्ताओं और रखरखावकर्ताओं के रूप में, हम यह सुनिश्चित करते हैं कि हमारे प्रोजेक्ट और समुदाय में भागीदारी सभी के लिए उत्पीड़न-मुक्त अनुभव हो, चाहे उनकी उम्र, शारीरिक बनावट, विकलांगता, जातीयता, लिंग विशेषताएं, लैंगिक पहचान और अभिव्यक्ति, अनुभव का स्तर, शिक्षा, सामाजिक-आर्थिक स्थिति, राष्ट्रीयता, व्यक्तिगत उपस्थिति, नस्ल, धर्म, या यौन पहचान और रुझान कुछ भी हो।
 
-## Our Standards
+## हमारे मानक
 
-Examples of behavior that contributes to creating a positive environment
-include:
+### सकारात्मक व्यवहार के उदाहरण:
 
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
-- Focusing on what is best for the community
-- Showing empathy towards other community members
+- स्वागत योग्य और समावेशी भाषा का उपयोग करना
+- विभिन्न दृष्टिकोणों और अनुभवों का सम्मान करना
+- रचनात्मक आलोचना को सहजता से स्वीकार करना
+- समुदाय के लिए सबसे अच्छा क्या है, उस पर ध्यान केंद्रित करना
+- अन्य सदस्यों के प्रति सहानुभूति दिखाना
 
-Examples of unacceptable behavior by participants include:
+### अस्वीकार्य व्यवहार के उदाहरण:
 
-- The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-- Trolling, insulting/derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-- Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+- यौन भाषा या छवियों का उपयोग और अनचाहे यौन ध्यान या प्रगति
+- ट्रोलिंग, अपमानजनक टिप्पणियां, और व्यक्तिगत या राजनीतिक हमले
+- सार्वजनिक या निजी उत्पीड़न
+- दूसरों की निजी जानकारी (जैसे भौतिक या इलेक्ट्रॉनिक पता) बिना स्पष्ट अनुमति के प्रकाशित करना
+- अन्य आचरण जो पेशेवर सेटिंग में अनुचित माना जा सकता है
 
-## Our Responsibilities
+## हमारी जिम्मेदारियां
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+प्रोजेक्ट रखरखावकर्ताओं की जिम्मेदारी है कि वे स्वीकार्य व्यवहार के मानकों को स्पष्ट करें और किसी भी अस्वीकार्य व्यवहार के मामले में उचित और निष्पक्ष सुधारात्मक कार्रवाई करें।
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+प्रोजेक्ट रखरखावकर्ताओं को यह अधिकार और जिम्मेदारी है कि वे टिप्पणियों, कमिट्स, कोड, विकी संपादनों, इश्यूज और अन्य योगदानों को हटाएं, संपादित करें या अस्वीकार करें जो इस आचार संहिता के अनुरूप नहीं हैं, या किसी भी योगदानकर्ता को अनुचित, धमकी भरे, आक्रामक या हानिकारक व्यवहार के लिए अस्थायी या स्थायी रूप से प्रतिबंधित करें।
 
-## Scope
+## दायरा
 
-This Code of Conduct applies within all project spaces, and it also applies when
-an individual is representing the project or its community in public spaces.
-Examples of representing a project or community include using an official
-project email address, posting via an official social media account, or acting
-as an appointed representative at an online or offline event. Representation of
-a project may be further defined and clarified by project maintainers.
+यह आचार संहिता सभी प्रोजेक्ट स्थानों पर लागू होती है, और यह तब भी लागू होती है जब कोई व्यक्ति सार्वजनिक स्थानों में प्रोजेक्ट या इसके समुदाय का प्रतिनिधित्व कर रहा हो।
 
-## Enforcement
+प्रतिनिधित्व के उदाहरणों में शामिल हैं:
+- आधिकारिक प्रोजेक्ट ईमेल पते का उपयोग करना
+- आधिकारिक सोशल मीडिया खाते से पोस्ट करना
+- ऑनलाइन या ऑफलाइन इवेंट में नियुक्त प्रतिनिधि के रूप में कार्य करना
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the organization at [owasp.foundation@owasp.org](mailto:owasp.foundation@owasp.org). All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+प्रोजेक्ट रखरखावकर्ता प्रतिनिधित्व को आगे परिभाषित और स्पष्ट कर सकते हैं।
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+## कार्रवाई
 
-## Attribution
+अपमानजनक, परेशान करने वाले, या अन्यथा अस्वीकार्य व्यवहार की घटनाओं की रिपोर्ट संगठन से [owasp.foundation@owasp.org](mailto:owasp.foundation@owasp.org) पर संपर्क करके की जा सकती है।
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], [version 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html)
+सभी शिकायतों की समीक्षा और जांच की जाएगी और परिस्थितियों के लिए आवश्यक और उचित समझी जाने वाली प्रतिक्रिया दी जाएगी।
+
+प्रोजेक्ट टीम घटना के रिपोर्टर के संबंध में गोपनीयता बनाए रखने के लिए बाध्य है। विशिष्ट प्रवर्तन नीतियों के और विवरण अलग से पोस्ट किए जा सकते हैं।
+
+प्रोजेक्ट रखरखावकर्ता जो आचार संहिता का पालन या प्रवर्तन ईमानदारी से नहीं करते हैं, उन्हें प्रोजेक्ट के नेतृत्व के अन्य सदस्यों द्वारा निर्धारित अस्थायी या स्थायी परिणामों का सामना करना पड़ सकता है।
+
+## स्रोत
+
+यह आचार संहिता [Contributor Covenant][homepage], [संस्करण 1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html) से अनुकूलित है।
 
 [homepage]: https://www.contributor-covenant.org
 
-For answers to common questions about this code of conduct, see
+इस आचार संहिता के बारे में सामान्य प्रश्नों के उत्तर के लिए, देखें:
 <https://www.contributor-covenant.org/faq>
