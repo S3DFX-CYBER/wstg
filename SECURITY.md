@@ -1,61 +1,62 @@
-# Security Policy
+# सिक्योरिटी पॉलिसी
 
-## Supported Versions
+## समर्थित संस्करण
 
-This repository contains documentation and educational content.
-There are no executable components or deployed services associated with this project.
+यह रिपॉजिटरी डॉक्युमेंटेशन और शैक्षिक सामग्री शामिल करती है।
 
-The `master` branch reflects the latest maintained version of the documentation.
+इस प्रोजेक्ट से संबद्ध कोई एक्जीक्यूटेबल कंपोनेंट या डिप्लॉय की गई सर्विसेज नहीं हैं।
 
-| Version | Supported |
-|--------|-----------|
+`master` ब्रांच डॉक्युमेंटेशन के नवीनतम रखरखाव किए गए संस्करण को दर्शाती है।
+
+| संस्करण | समर्थित |
+|--------|---------|
 | master | ✅ |
-| Others | ❌ |
+| अन्य | ❌ |
 
 ---
 
-## Reporting a Vulnerability
+## कमजोरी की रिपोर्ट करना
 
-This repository does **not** directly process user data, authentication, or runtime execution.
-However, if you believe you have identified:
+यह रिपॉजिटरी **सीधे** यूजर डेटा, ऑथेंटिकेशन, या रनटाइम एक्जीक्यूशन को प्रोसेस **नहीं** करती है।
 
-- A security issue affecting linked tooling or referenced examples
-- A misconfiguration that could lead to unsafe usage patterns
-- A vulnerability related to CI/CD workflows or repository automation
+हालांकि, यदि आपको लगता है कि आपने निम्नलिखित की पहचान की है:
 
-Please follow **responsible disclosure** practices.
+- लिंक की गई टूलिंग या संदर्भित उदाहरणों को प्रभावित करने वाली सिक्योरिटी समस्या
+- एक मिसकॉन्फ़िगरेशन जो असुरक्षित उपयोग पैटर्न का कारण बन सकता है
+- CI/CD वर्कफ़्लो या रिपॉजिटरी ऑटोमेशन से संबंधित कमजोरी
 
-### How to Report
+कृपया **जिम्मेदार डिस्क्लोजर** प्रथाओं का पालन करें।
 
-- Open a **private GitHub Security Advisory** for this repository, **or**
-- Contact the OWASP project maintainers through official OWASP communication channels
+### रिपोर्ट कैसे करें
 
-Please include:
+- इस रिपॉजिटरी के लिए एक **प्राइवेट GitHub Security Advisory** खोलें, **या**
+- आधिकारिक OWASP संचार चैनलों के माध्यम से OWASP प्रोजेक्ट मेंटेनर्स से संपर्क करें
 
-- A clear description of the issue
-- Steps to reproduce (if applicable)
-- Potential impact
-- Suggested remediation (if available)
+**कृपया शामिल करें:**
 
----
-
-## Disclosure Process
-
-- Reports will be reviewed by project maintainers
-- If applicable, fixes will be discussed and implemented
-- Public disclosure may occur after remediation, with reporter credit if desired
+- समस्या का स्पष्ट विवरण
+- पुनरुत्पादन के चरण (यदि लागू हो)
+- संभावित प्रभाव
+- सुझाया गया समाधान (यदि उपलब्ध हो)
 
 ---
 
-## Security Best Practices for Contributors
+## डिस्क्लोजर प्रक्रिया
 
-- Do not include secrets, tokens, or credentials in documentation or workflows
-- Avoid using user-controlled input in CI/CD pipelines without validation
-- Follow the OWASP Cheat Sheet Series for secure development and governance practices
+- रिपोर्ट की समीक्षा प्रोजेक्ट मेंटेनर्स द्वारा की जाएगी
+- यदि लागू हो, तो सुधारों पर चर्चा की जाएगी और उन्हें लागू किया जाएगा
+- सार्वजनिक डिस्क्लोजर समाधान के बाद हो सकता है, रिपोर्टर क्रेडिट के साथ यदि वांछित हो
 
 ---
 
-## Recognition
+## योगदानकर्ताओं के लिए सिक्योरिटी बेस्ट प्रैक्टिसेज
 
-Security researchers and contributors who responsibly disclose issues may be acknowledged
-in release notes or project documentation, unless anonymity is requested.
+- डॉक्युमेंटेशन या वर्कफ़्लो में सीक्रेट्स, टोकन या क्रेडेंशियल शामिल न करें
+- यूजर-कंट्रोल्ड इनपुट को CI/CD पाइपलाइन में बिना वैलिडेशन के उपयोग न करें
+- सुरक्षित डेवलपमेंट और गवर्नेंस प्रथाओं के लिए OWASP Cheat Sheet Series का पालन करें
+
+---
+
+## मान्यता
+
+सिक्योरिटी रिसर्चर्स और योगदानकर्ता जो जिम्मेदारी से समस्याओं का खुलासा करते हैं, उन्हें रिलीज़ नोट्स या प्रोजेक्ट डॉक्युमेंटेशन में स्वीकार किया जा सकता है, जब तक कि गुमनामी का अनुरोध न किया गया हो।
