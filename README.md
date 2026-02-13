@@ -12,7 +12,11 @@
 - यह अनुवाद OWASP Web Security Testing Guide (WSTG) के आधिकारिक repo             (https://github.com/OWASP/wstg) पर आधारित है।
 - `/document/`में मौजूद सभी दस्तावेज़ों का हिंदी में अनुवाद किया गया है।
 
-अंतिम स्थिर रिलीज़ के लिए, [रिलीज़ 4.2 देखें](https://github.com/OWASP/wstg/releases/tag/v4.2)। [ऑनलाइन](https://owasp.org/www-project-web-security-testing-guide/v42/) भी उपलब्ध है।
+सुझाव और सुधार का स्वागत है! कृपया अपने सुझाव Issue या Pull Request के रूप में भेजें।
+
+संरक्षक (Maintainer): @S3DFX-CYBER
+
+यदि आप इस अनुवाद का उपयोग रिपोर्ट, प्रस्तुति या प्रशिक्षण में करते हैं, तो कृपया हमें श्रेय (credit) दें।
 
 - [WSTG परिदृश्यों को कैसे संदर्भित करें](#wstg-परिदृश्यों-को-कैसे-संदर्भित-करें)
     - [लिंकिंग](#लिंकिंग)
