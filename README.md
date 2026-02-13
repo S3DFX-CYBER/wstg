@@ -1,4 +1,4 @@
-# OWASP वेब सिक्योरिटी टेस्टिंग गाइड
+# OWASP Web Security Testing Guide - हिंदी में अनुवाद
 
 [![योगदान स्वागत है](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/OWASP/wstg/issues)
 [![OWASP फ्लैगशिप](https://img.shields.io/badge/owasp-flagship-brightgreen.svg)](https://owasp.org/projects/)
