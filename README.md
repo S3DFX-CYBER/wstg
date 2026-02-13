@@ -122,8 +122,8 @@ https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
 ## मुख्य टीम
 
-- Rejah Rehim  
-- Victoria Drake  
+- [Rejah Rehim](https://github.com/rejahrehim)
+- [Victoria Drake](https://github.com/victoriadrake)
 
 ---
 
