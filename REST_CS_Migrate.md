@@ -1,68 +1,94 @@
-# REST Assessment Cheat Sheet
+# REST असेसमेंट चीट शीट
 
-## About RESTful Web Services
+## RESTful वेब सर्विसेज के बारे में
 
-Web Services are an implementation of web technology used for machine to machine communication. As such they are used for Inter application communication, Web 2.0 and Mashups and by desktop and mobile applications to call a server.
+वेब सर्विसेज वेब टेक्नोलॉजी का एक इम्प्लीमेंटेशन है जिसका उपयोग मशीन से मशीन संचार के लिए किया जाता है। इस प्रकार इनका उपयोग इंटर एप्लिकेशन कम्युनिकेशन, वेब 2.0 और मैशअप्स में, तथा डेस्कटॉप और मोबाइल एप्लिकेशन द्वारा सर्वर को कॉल करने के लिए किया जाता है।
 
-RESTful web services (often called simply REST) are a light weight variant of Web Services based on the RESTful design pattern. In practice RESTful web services utilizes HTTP requests that are similar to regular HTTP calls in contrast with other Web Services technologies such as SOAP which utilizes a complex protocol.
+RESTful वेब सर्विसेज (जिन्हें अक्सर सिर्फ REST कहा जाता है) वेब सर्विसेज का एक हल्का वेरिएंट है जो RESTful डिजाइन पैटर्न पर आधारित है। व्यावहारिक रूप में RESTful वेब सर्विसेज HTTP रिक्वेस्ट का उपयोग करती हैं जो SOAP जैसी अन्य वेब सर्विस टेक्नोलॉजी की तुलना में रेगुलर HTTP कॉल के समान होती हैं।
 
-## Key relevant properties of RESTful web services
+## RESTful वेब सर्विसेज की प्रमुख विशेषताएं
 
-- Use of HTTP methods (`GET`, `POST`, `PUT` and `DELETE`) as the primary verb for the requested operation.
-- Non-standard parameters specifications:
-    - As part of the URL.
-    - In headers.
-- Structured parameters and responses using JSON or XML in a parameter values, request body or response body. Those are required to communicate machine useful information.
-- Custom authentication and session management, often utilizing custom security tokens: this is needed as machine to machine communication does not allow for login sequences.
-- Lack of formal documentation. A [proposed standard for describing RESTful web services called WADL](https://www.w3.org/Submission/wadl/) was submitted by Sun Microsystems but was never officially adapted.
+- **HTTP methods** (`GET`, `POST`, `PUT` और `DELETE`) का उपयोग रिक्वेस्ट किए गए ऑपरेशन के लिए प्राथमिक क्रिया के रूप में किया जाता है।
 
-## The challenge of security testing RESTful web services
+- **नॉन-स्टैंडर्ड पैरामीटर स्पेसिफिकेशन:**
+    - URL के हिस्से के रूप में
+    - Headers में
 
-- Inspecting the application does not reveal the attack surface, I.e. the URLs and parameter structure used by the RESTful web service. The reasons are:
-    - No application utilizes all the available functions and parameters exposed by the service
-    - Those used are often activated dynamically by client-side code and not as links in pages.
-    - The client application is often not a web application and does not allow inspection of the activating link or even relevant code.
-- The parameters are none standard making it hard to determine what is just part of the URL or a constant header and what is a parameter worth [fuzzing](https://owasp.org/www-community/Fuzzing).
-- As a machine interface the number of parameters used can be very large, for example a JSON structure may include dozens of parameters. [fuzzing](https://owasp.org/www-community/Fuzzing) each one significantly lengthen the time required for testing.
-- Custom authentication mechanisms require reverse engineering and make popular tools not useful as they cannot track a login session.
+- **JSON या XML का उपयोग करके स्ट्रक्चर्ड पैरामीटर और रिस्पांस** - ये मशीन-उपयोगी जानकारी संप्रेषित करने के लिए आवश्यक हैं।
 
-## How to pentest a RESTful web service
+- **कस्टम ऑथेंटिकेशन और सेशन मैनेजमेंट**, अक्सर कस्टम सिक्योरिटी टोकन का उपयोग करते हुए: यह आवश्यक है क्योंकि मशीन से मशीन संचार लॉगिन सीक्वेंस की अनुमति नहीं देता।
 
-Determine the attack surface through documentation - RESTful pen testing might be better off if some level of white box testing is allowed and you can get information about the service.
+- **फॉर्मल डॉक्युमेंटेशन का अभाव** - [WADL नामक RESTful वेब सर्विसेज का वर्णन करने के लिए प्रस्तावित स्टैंडर्ड](https://www.w3.org/Submission/wadl/) Sun Microsystems द्वारा सबमिट किया गया था लेकिन इसे आधिकारिक तौर पर कभी अपनाया नहीं गया।
 
-This information will ensure fuller coverage of the attack surface. Such information to look for:
+## RESTful वेब सर्विसेज की सिक्योरिटी टेस्टिंग की चुनौतियां
 
-- Formal service description - While for other types of web services such as SOAP a formal description, usually in WSDL is often available, this is seldom the case for REST. That said, either WSDL 2.0 or WADL can describe REST and are sometimes used.
-- A developer guide for using the service may be less detailed but will commonly be found, and might even be considered *black box*.
-- Application source or configuration - in many frameworks, including dotNet ,the REST service definition might be easily obtained from configuration files rather than from code.
+- **एप्लिकेशन का निरीक्षण अटैक सरफेस को प्रकट नहीं करता**, यानी RESTful वेब सर्विस द्वारा उपयोग किए जाने वाले URLs और पैरामीटर स्ट्रक्चर। कारण हैं:
+    - कोई भी एप्लिकेशन सर्विस द्वारा उपलब्ध सभी फंक्शन और पैरामीटर का उपयोग नहीं करता
+    - जो उपयोग किए जाते हैं वे अक्सर क्लाइंट-साइड कोड द्वारा डायनामिकली एक्टिवेट होते हैं न कि पेज में लिंक के रूप में
+    - क्लाइंट एप्लिकेशन अक्सर वेब एप्लिकेशन नहीं होता और एक्टिवेटिंग लिंक या प्रासंगिक कोड के निरीक्षण की अनुमति नहीं देता
 
-Collect full requests using a [proxy](https://www.zaproxy.org/) - while always an important pen testing step, this is more important for REST based applications as the application UI may not give clues on the actual attack surface.
+- **पैरामीटर नॉन-स्टैंडर्ड होते हैं** जिससे यह निर्धारित करना मुश्किल हो जाता है कि क्या URL का हिस्सा है या कॉन्स्टेंट हेडर है और क्या [fuzzing](https://owasp.org/www-community/Fuzzing) के लायक पैरामीटर है।
 
-Note that the proxy must be able to collect full requests and not just URLs as REST services utilize more than just GET parameters.
+- **मशीन इंटरफ़ेस के रूप में** उपयोग किए जाने वाले पैरामीटर की संख्या बहुत बड़ी हो सकती है, उदाहरण के लिए एक JSON स्ट्रक्चर में दर्जनों पैरामीटर शामिल हो सकते हैं। प्रत्येक को [fuzzing](https://owasp.org/www-community/Fuzzing) करने से टेस्टिंग के लिए आवश्यक समय काफी बढ़ जाता है।
 
-Analyze collected requests to determine the attack surface:
+- **कस्टम ऑथेंटिकेशन मैकेनिज्म** को रिवर्स इंजीनियरिंग की आवश्यकता होती है और लोकप्रिय टूल्स को बेकार बना देते हैं क्योंकि वे लॉगिन सेशन को ट्रैक नहीं कर सकते।
 
-- Look for non-standard parameters:
-    - Look for abnormal HTTP headers - those would many times be header based parameters.
-    - Determine if a URL segment has a repeating pattern across URLs. Such patterns can include a date, a number or an ID like string and indicate that the URL segment is a URL embedded parameter.
-        - For example: `https://server/srv/2013-10-21/use.php`
-    - Look for structured parameter values - those may be JSON, XML or a non-standard structure.
-    - If the last element of a URL does not have an extension, it may be a parameter. This is especially true if the application technology normally uses extensions or if a previous segment does have an extension.
-        - For example: `https://server/svc/Grid.asmx/GetRelatedListItems`
-    - Look for highly varying URL segments - a single URL segment that has many values may be parameter and not a physical directory.
-        - For example if the URL `https://server/src/XXXX/page` repeats with hundreds of value for `XXXX`, chances `XXXX` is a parameter.
+## RESTful वेब सर्विस का पेनटेस्ट कैसे करें
 
-Verify non-standard parameters: in some cases (but not all), setting the value of a URL segment suspected of being a parameter to a value expected to be invalid can help determine if it is a path elements of a parameter. If a path element, the web server will return a *404* message, while for an invalid value to a parameter the answer would be an application level message as the value is legal at the web server level.
+### 1. डॉक्युमेंटेशन के माध्यम से अटैक सरफेस निर्धारित करें
 
-Analyzing collected requests to optimize [fuzzing](https://owasp.org/www-community/Fuzzing) - after identifying potential parameters to fuzz, analyze the collected values for each to determine:
+RESTful पेन टेस्टिंग बेहतर हो सकती है यदि कुछ स्तर की व्हाइट बॉक्स टेस्टिंग की अनुमति हो और आप सर्विस के बारे में जानकारी प्राप्त कर सकें।
 
-- Valid vs. invalid values, so that [fuzzing](https://owasp.org/www-community/Fuzzing) can focus on marginal invalid values.
-    - For example sending *0* for a value found to be always a positive integer.
-- Sequences allowing to fuzz beyond the range presumably allocated to the current user.
+**देखने योग्य जानकारी:**
 
-Lastly, when [fuzzing](https://owasp.org/www-community/Fuzzing), don't forget to emulate the authentication mechanism used.
+- **फॉर्मल सर्विस डिस्क्रिप्शन** - जबकि SOAP जैसी अन्य वेब सर्विसेज के लिए आमतौर पर WSDL में फॉर्मल डिस्क्रिप्शन उपलब्ध होता है, REST के लिए यह शायद ही कभी होता है। फिर भी, WSDL 2.0 या WADL REST का वर्णन कर सकते हैं और कभी-कभी उपयोग किए जाते हैं।
 
-## Related Resources
+- **डेवलपर गाइड** - सर्विस उपयोग के लिए डेवलपर गाइड कम विस्तृत हो सकती है लेकिन आमतौर पर मिल जाती है, और इसे *ब्लैक बॉक्स* भी माना जा सकता है।
 
-- [REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html) - the other side of this cheat sheet
-- [RESTful services, web security blind spot](https://www.youtube.com/watch?v=pWq4qGLAZHI) - avideo presentation elaborating on most of the topics on this cheat sheet.
+- **एप्लिकेशन सोर्स या कॉन्फ़िगरेशन** - कई फ्रेमवर्क में, dotNet सहित, REST सर्विस डेफिनिशन आसानी से कोड के बजाय कॉन्फ़िगरेशन फ़ाइलों से प्राप्त की जा सकती है।
+
+### 2. Proxy का उपयोग करके पूर्ण रिक्वेस्ट एकत्र करें
+
+[Proxy](https://www.zaproxy.org/) का उपयोग करके पूर्ण रिक्वेस्ट एकत्र करना REST आधारित एप्लिकेशन के लिए अधिक महत्वपूर्ण है क्योंकि एप्लिकेशन UI वास्तविक अटैक सरफेस पर संकेत नहीं दे सकता है।
+
+**नोट:** Proxy को पूर्ण रिक्वेस्ट एकत्र करने में सक्षम होना चाहिए न कि केवल URLs, क्योंकि REST सर्विसेज केवल GET पैरामीटर से अधिक का उपयोग करती हैं।
+
+### 3. अटैक सरफेस निर्धारित करने के लिए एकत्रित रिक्वेस्ट का विश्लेषण करें
+
+**नॉन-स्टैंडर्ड पैरामीटर की तलाश करें:**
+
+- **असामान्य HTTP headers देखें** - ये कई बार header-based पैरामीटर होंगे।
+
+- **निर्धारित करें कि क्या URL सेगमेंट में URLs में दोहराया जाने वाला पैटर्न है**। ऐसे पैटर्न में एक तारीख, एक संख्या या ID जैसी स्ट्रिंग शामिल हो सकती है और यह संकेत करती है कि URL सेगमेंट एक URL एम्बेडेड पैरामीटर है।
+    - **उदाहरण:** `https://server/srv/2013-10-21/use.php`
+
+- **स्ट्रक्चर्ड पैरामीटर वैल्यू देखें** - ये JSON, XML या नॉन-स्टैंडर्ड स्ट्रक्चर हो सकते हैं।
+
+- **यदि URL का अंतिम तत्व में एक्सटेंशन नहीं है, तो यह एक पैरामीटर हो सकता है**। यह विशेष रूप से सच है यदि एप्लिकेशन टेक्नोलॉजी सामान्य रूप से एक्सटेंशन का उपयोग करती है या यदि पिछले सेगमेंट में एक्सटेंशन है।
+    - **उदाहरण:** `https://server/svc/Grid.asmx/GetRelatedListItems`
+
+- **अत्यधिक भिन्न URL सेगमेंट देखें** - एक सिंगल URL सेगमेंट जिसमें कई वैल्यू हैं, वह पैरामीटर हो सकता है न कि फिजिकल डायरेक्टरी।
+    - **उदाहरण:** यदि URL `https://server/src/XXXX/page` में `XXXX` के लिए सैकड़ों वैल्यू के साथ दोहराव होता है, तो संभावना है कि `XXXX` एक पैरामीटर है।
+
+### 4. नॉन-स्टैंडर्ड पैरामीटर वेरिफाई करें
+
+कुछ मामलों में (लेकिन सभी में नहीं), एक URL सेगमेंट की वैल्यू को सेट करना जिसे पैरामीटर होने का संदेह है, एक अमान्य होने की उम्मीद की जाने वाली वैल्यू में, यह निर्धारित करने में मदद कर सकता है कि यह एक पाथ एलीमेंट है या पैरामीटर।
+
+- यदि पाथ एलीमेंट है, तो वेब सर्वर *404* मैसेज लौटाएगा
+- जबकि पैरामीटर की अमान्य वैल्यू के लिए उत्तर एप्लिकेशन लेवल मैसेज होगा
+
+### 5. Fuzzing को ऑप्टिमाइज़ करने के लिए एकत्रित रिक्वेस्ट का विश्लेषण करें
+
+संभावित पैरामीटर की पहचान करने के बाद, प्रत्येक के लिए एकत्रित वैल्यू का विश्लेषण करें:
+
+- **वैध बनाम अमान्य वैल्यू** निर्धारित करें, ताकि [fuzzing](https://owasp.org/www-community/Fuzzing) मार्जिनल अमान्य वैल्यू पर फोकस कर सके।
+    - **उदाहरण:** हमेशा पॉजिटिव इंटीजर पाई गई वैल्यू के लिए *0* भेजना।
+
+- **सीक्वेंस** जो वर्तमान यूजर को आवंटित रेंज से परे fuzzing की अनुमति दें।
+
+**अंत में**, जब [fuzzing](https://owasp.org/www-community/Fuzzing) करें, तो उपयोग किए गए ऑथेंटिकेशन मैकेनिज्म को एमुलेट करना न भूलें।
+
+## संबंधित संसाधन
+
+- [REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html) - इस चीट शीट का दूसरा पक्ष
+- [RESTful services, web security blind spot](https://www.youtube.com/watch?v=pWq4qGLAZHI) - एक वीडियो प्रेजेंटेशन जो इस चीट शीट के अधिकांश विषयों को विस्तार से बताता है
