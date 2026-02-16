@@ -1,56 +1,56 @@
-# Foreword
+# प्रस्तावना
 
-The problem of insecure software is perhaps the most important technical challenge of our time. The dramatic rise of web applications enabling business, social networking etc has only compounded the requirements to establish a robust approach to writing and securing our internet, web applications, and data.
+असुरक्षित software की समस्या शायद हमारे समय की सबसे महत्वपूर्ण तकनीकी चुनौती है। Business, social networking आदि को सक्षम करने वाले web applications की नाटकीय वृद्धि ने हमारे internet, web applications और data को लिखने और सुरक्षित करने के लिए एक मजबूत दृष्टिकोण स्थापित करने की आवश्यकताओं को और बढ़ा दिया है।
 
-At the Open Worldwide Application Security Project® (OWASP®), we're trying to make the world a place where insecure software is the anomaly, not the norm. The OWASP Testing Guide has an important role to play in solving this serious issue. It is vitally important that our approach to testing software for security issues is based on the principles of engineering and science. We need a consistent, repeatable and defined approach to testing web applications. A world without some minimal standards in terms of engineering and technology is a world in chaos.
+Open Worldwide Application Security Project® (OWASP®) में, हम दुनिया को एक ऐसी जगह बनाने की कोशिश कर रहे हैं जहाँ असुरक्षित software एक anomaly (अपवाद) हो, सामान्य नहीं। इस गंभीर मुद्दे को हल करने में OWASP Testing Guide की एक महत्वपूर्ण भूमिका है। यह बेहद महत्वपूर्ण है कि सुरक्षा मुद्दों के लिए software का परीक्षण करने का हमारा दृष्टिकोण engineering और science के सिद्धांतों पर आधारित हो। हमें web applications का परीक्षण करने के लिए एक consistent, दोहराने योग्य और परिभाषित दृष्टिकोण की आवश्यकता है। Engineering और technology के मामले में कुछ न्यूनतम मानकों के बिना एक दुनिया अराजकता की दुनिया है।
 
-It goes without saying that you can't build a secure application without performing security testing on it. Testing is part of a wider approach to build a secure system. Many software development organizations do not include security testing as part of their standard software development process. What is even worse is that many security vendors deliver testing with varying degrees of quality and rigor.
+यह कहने की आवश्यकता नहीं है कि आप इस पर सुरक्षा परीक्षण किए बिना एक सुरक्षित application नहीं बना सकते हैं। Testing एक सुरक्षित system बनाने के व्यापक दृष्टिकोण का हिस्सा है। कई software development organizations अपनी मानक software development process के हिस्से के रूप में सुरक्षा परीक्षण को शामिल नहीं करते हैं। इससे भी बदतर यह है कि कई सुरक्षा vendors गुणवत्ता और rigor की अलग-अलग degrees के साथ परीक्षण प्रदान करते हैं।
 
-Security testing, by itself, isn't a particularly good stand alone measure of how secure an application is, because there are an infinite number of ways that an attacker might be able to make an application break, and it simply isn't possible to test them all. We can't hack ourselves secure as we only have a limited time to test and defend where an attacker does not have such constraints.
+सुरक्षा परीक्षण, अपने आप में, एक application कितना सुरक्षित है इसका विशेष रूप से अच्छा stand alone measure नहीं है, क्योंकि एक attacker के पास application को तोड़ने के अनगिनत तरीके हो सकते हैं, और उन सभी का परीक्षण करना संभव नहीं है। हम खुद को सुरक्षित नहीं hack कर सकते क्योंकि हमारे पास परीक्षण और रक्षा करने के लिए सीमित समय होता है जबकि एक attacker के पास ऐसी बाधाएं नहीं होती हैं।
 
-In conjunction with other OWASP projects such as the Code Review Guide, the Development Guide and tools such as [ZAP](https://www.zaproxy.org/), this is a great start towards building and maintaining secure applications. This Testing Guide will show you how to verify the security of your running application. I highly recommend using these guides as part of your application security initiatives.
+अन्य OWASP projects जैसे Code Review Guide, Development Guide और [ZAP](https://www.zaproxy.org/) जैसे tools के साथ, यह सुरक्षित applications बनाने और maintain करने की दिशा में एक शानदार शुरुआत है। यह Testing Guide आपको दिखाएगा कि अपने running application की सुरक्षा को कैसे verify करें। मैं अत्यधिक सिफारिश करता हूं कि इन guides का उपयोग अपनी application security initiatives के हिस्से के रूप में करें।
 
-## Why OWASP?
+## OWASP क्यों?
 
-Creating a guide like this is a huge undertaking, requiring the expertise of hundreds of people around the world. There are many different ways to test for security flaws and this guide captures the consensus of the leading experts on how to perform this testing quickly, accurately, and efficiently. OWASP gives like minded security folks the ability to work together and form a leading practice approach to a security problem.
+इस तरह की guide बनाना एक विशाल undertaking है, जिसके लिए दुनिया भर के सैकड़ों लोगों की expertise की आवश्यकता होती है। सुरक्षा खामियों के परीक्षण के कई अलग-अलग तरीके हैं और यह guide इस बात की consensus को capture करता है कि इस परीक्षण को जल्दी, सटीक और कुशलता से कैसे किया जाए। OWASP समान विचारधारा वाले सुरक्षा लोगों को एक साथ काम करने और एक सुरक्षा समस्या के लिए एक leading practice दृष्टिकोण बनाने की क्षमता देता है।
 
-The importance of having this guide available in a completely free and open way is important for the foundation's mission. It gives anyone the ability to understand the techniques used to test for common security issues. Security should not be a black art or closed secret that only a few can practice. It should be open to all and not exclusive to security practitioners but also QA, Developers and Technical Managers. The project to build this guide keeps this expertise in the hands of the people who need it - you, me and anyone that is involved in building software.
+इस guide को पूरी तरह से free और open तरीके से उपलब्ध कराना foundation के mission के लिए महत्वपूर्ण है। यह किसी को भी सामान्य सुरक्षा मुद्दों के परीक्षण के लिए उपयोग की जाने वाली techniques को समझने की क्षमता देता है। Security एक black art या बंद रहस्य नहीं होना चाहिए जिसे केवल कुछ लोग ही practice कर सकें। यह सभी के लिए open होना चाहिए और न केवल security practitioners के लिए exclusive होना चाहिए बल्कि QA, Developers और Technical Managers के लिए भी। इस guide को बनाने की project इस expertise को उन लोगों के हाथों में रखती है जिन्हें इसकी आवश्यकता है - आप, मैं और कोई भी जो software बनाने में शामिल है।
 
-This guide must make its way into the hands of developers and software testers. There are not nearly enough application security experts in the world to make any significant dent in the overall problem. The initial responsibility for application security must fall on the shoulders of the developers because they write the code. It shouldn't be a surprise that developers aren't producing secure code if they're not testing for it or consider the types of bugs which introduce vulnerability.
+यह guide developers और software testers के हाथों में पहुंचनी चाहिए। समग्र समस्या में कोई महत्वपूर्ण प्रभाव डालने के लिए दुनिया में पर्याप्त application security experts नहीं हैं। Application security की प्रारंभिक जिम्मेदारी developers के कंधों पर आनी चाहिए क्योंकि वे code लिखते हैं। यह आश्चर्यजनक नहीं होना चाहिए कि developers सुरक्षित code नहीं बना रहे हैं यदि वे इसके लिए परीक्षण नहीं कर रहे हैं या उन प्रकार के bugs पर विचार नहीं कर रहे हैं जो vulnerability को introduce करते हैं।
 
-Keeping this information up to date is a critical aspect of this guide project. By adopting the wiki approach, the OWASP community can evolve and expand the information in this guide to keep pace with the fast moving application security threat landscape.
+इस जानकारी को up to date रखना इस guide project का एक critical पहलू है। Wiki approach को अपनाकर, OWASP community इस guide में जानकारी को evolve और expand कर सकती है ताकि तेजी से बदलते application security threat landscape के साथ तालमेल बनाए रख सके।
 
-This Guide is a great testament to the passion and energy our members and project volunteers have for this subject. It shall certainly help to change the world a line of code at a time.
+यह Guide हमारे members और project volunteers की इस विषय के लिए passion और energy का एक महान प्रमाण है। यह निश्चित रूप से एक समय में code की एक line से दुनिया को बदलने में मदद करेगा।
 
-## Tailoring and Prioritizing
+## अनुकूलन और प्राथमिकता
 
-You should adopt this guide in your organization. You may need to tailor the information to match your organization's technologies, processes, and organizational structure.
+आपको अपने organization में इस guide को adopt करना चाहिए। आपको अपने organization की technologies, processes और organizational structure से मेल खाने के लिए जानकारी को tailor करने की आवश्यकता हो सकती है।
 
-In general there are several different roles within organizations that may use this guide:
+सामान्य तौर पर organizations के भीतर कई अलग-अलग roles होते हैं जो इस guide का उपयोग कर सकते हैं:
 
-- Developers should use this guide to ensure that they are producing secure code. These tests should be a part of normal code and unit testing procedures.
-- Software testers and QA should use this guide to expand the set of test cases they apply to applications. Catching these vulnerabilities early saves considerable time and effort later.
-- Security specialists should use this guide in combination with other techniques as one way to verify that no security holes have been missed in an application.
-- Project Managers should consider the reason this guide exists and that security issues are manifested via bugs in code and design.
+- Developers को यह सुनिश्चित करने के लिए इस guide का उपयोग करना चाहिए कि वे सुरक्षित code बना रहे हैं। ये tests सामान्य code और unit testing procedures का हिस्सा होना चाहिए।
+- Software testers और QA को applications पर लागू किए जाने वाले test cases के set को expand करने के लिए इस guide का उपयोग करना चाहिए। इन vulnerabilities को जल्दी पकड़ने से बाद में काफी समय और प्रयास की बचत होती है।
+- Security specialists को अन्य techniques के साथ इस guide का उपयोग यह verify करने के एक तरीके के रूप में करना चाहिए कि एक application में कोई सुरक्षा छेद नहीं छूटा है।
+- Project Managers को इस बात पर विचार करना चाहिए कि यह guide क्यों मौजूद है और यह कि सुरक्षा मुद्दे code और design में bugs के माध्यम से प्रकट होते हैं।
 
-The most important thing to remember when performing security testing is to continuously re-prioritize. There are infinite ways that an application could fail, and organizations always have limited testing time and resources. Be sure time and resources are spent wisely. Try to focus on the security holes that are a real risk to your business. Try to contextualize risk in terms of the application and its use cases.
+सुरक्षा परीक्षण करते समय याद रखने वाली सबसे महत्वपूर्ण बात लगातार re-prioritize करना है। एक application के fail होने के अनंत तरीके हो सकते हैं, और organizations के पास हमेशा सीमित परीक्षण समय और resources होते हैं। सुनिश्चित करें कि समय और resources का बुद्धिमानी से खर्च किया जाए। उन सुरक्षा छेदों पर focus करने का प्रयास करें जो आपके business के लिए एक वास्तविक जोखिम हैं। Application और इसके use cases के संदर्भ में risk को contextualize करने का प्रयास करें।
 
-This guide is best viewed as a set of techniques that you can use to find different types of security holes. But not all the techniques are equally important. Try to avoid using the guide as a checklist, new vulnerabilities are always manifesting and no guide can be an exhaustive list of "things to test for", but rather a great place to start.
+इस guide को techniques के एक set के रूप में देखा जाना सबसे अच्छा है जिसका उपयोग आप विभिन्न प्रकार के सुरक्षा छेदों को खोजने के लिए कर सकते हैं। लेकिन सभी techniques समान रूप से महत्वपूर्ण नहीं हैं। Guide को एक checklist के रूप में उपयोग करने से बचने का प्रयास करें, नई vulnerabilities हमेशा प्रकट होती रहती हैं और कोई भी guide "परीक्षण के लिए चीजों" की exhaustive list नहीं हो सकती है, बल्कि शुरू करने के लिए एक शानदार जगह है।
 
-## The Role of Automated Tools
+## Automated Tools की भूमिका
 
-There are a number of companies selling automated security analysis and testing tools. Remember the limitations of these tools so that you can use them for what they're good at. As Michael Howard put it at the 2006 OWASP AppSec Conference in Seattle, "Tools do not make software secure! They help scale the process and help enforce policy."
+कई companies automated security analysis और testing tools बेच रही हैं। इन tools की सीमाओं को याद रखें ताकि आप उन्हें उसके लिए उपयोग कर सकें जिसमें वे अच्छे हैं। जैसा कि Michael Howard ने Seattle में 2006 OWASP AppSec Conference में कहा था, "Tools software को सुरक्षित नहीं बनाते हैं! वे process को scale करने में मदद करते हैं और policy को enforce करने में मदद करते हैं।"
 
-Most importantly, these tools are generic - meaning that they are not designed for your custom code, but for applications in general. That means that while they can find some generic problems, they do not have enough knowledge of your application to allow them to detect most flaws. In my experience, the most serious security issues are the ones that are not generic, but deeply intertwined in your business logic and custom application design.
+सबसे महत्वपूर्ण बात यह है कि ये tools generic हैं - मतलब कि वे आपके custom code के लिए नहीं बल्कि सामान्य रूप से applications के लिए designed हैं। इसका मतलब है कि जबकि वे कुछ generic problems खोज सकते हैं, उनके पास आपके application के बारे में पर्याप्त knowledge नहीं है जो उन्हें अधिकांश flaws का पता लगाने की अनुमति दे। मेरे अनुभव में, सबसे गंभीर सुरक्षा मुद्दे वे हैं जो generic नहीं हैं, बल्कि आपके business logic और custom application design में गहराई से जुड़े हुए हैं।
 
-These tools can also be very useful, since they do find lots of potential issues. While running the tools doesn't take much time, each one of the potential problems takes time to investigate and verify. If the goal is to find and eliminate the most serious flaws as quickly as possible, consider whether your time is best spent with automated tools or with the techniques described in this guide. Still, these tools are certainly part of a well-balanced application security program. Used wisely, they can support your overall processes to produce more secure code.
+ये tools बहुत उपयोगी भी हो सकते हैं, क्योंकि वे बहुत सारे संभावित मुद्दों को खोजते हैं। जबकि tools चलाने में ज्यादा समय नहीं लगता है, प्रत्येक संभावित समस्या की जांच और verify करने में समय लगता है। यदि लक्ष्य जल्दी से जल्दी सबसे गंभीर flaws को खोजना और समाप्त करना है, तो विचार करें कि आपका समय automated tools के साथ बेहतर खर्च किया गया है या इस guide में वर्णित techniques के साथ। फिर भी, ये tools निश्चित रूप से एक well-balanced application security program का हिस्सा हैं। बुद्धिमानी से उपयोग किए जाने पर, वे अधिक सुरक्षित code produce करने के लिए आपकी समग्र processes का समर्थन कर सकते हैं।
 
-## Call to Action
+## कार्रवाई का आह्वान
 
-If you're building, designing or testing software, we strongly encourage you to get familiar with the security testing guidance in this document. It is a great road map for testing the most common issues that applications are facing today, but it is not exhaustive. If you find errors, please add a note to the discussion page or make the change yourself. You'll be helping thousands of others who use this guide.
+यदि आप software बना रहे हैं, design कर रहे हैं या test कर रहे हैं, तो हम आपको दृढ़ता से प्रोत्साहित करते हैं कि इस document में सुरक्षा परीक्षण guidance से परिचित हों। यह सबसे सामान्य मुद्दों के परीक्षण के लिए एक शानदार road map है जिनका applications आज सामना कर रहे हैं, लेकिन यह exhaustive नहीं है। यदि आपको errors मिलती हैं, तो कृपया discussion page पर एक note जोड़ें या स्वयं परिवर्तन करें। आप हजारों अन्य लोगों की मदद करेंगे जो इस guide का उपयोग करते हैं।
 
-Please consider [joining us](https://owasp.org/membership/) as an individual or corporate member so that we can continue to produce materials like this testing guide and all the other great projects at OWASP.
+कृपया एक individual या corporate member के रूप में [हमसे जुड़ने](https://owasp.org/membership/) पर विचार करें ताकि हम इस testing guide जैसी materials और OWASP की सभी अन्य महान projects का उत्पादन जारी रख सकें।
 
-Thank you to all the past and future contributors to this guide, your work will help to make applications worldwide more secure.
+इस guide के सभी past और future contributors को धन्यवाद, आपका काम दुनिया भर में applications को अधिक सुरक्षित बनाने में मदद करेगा।
 
-Open Worldwide Application Security Project and OWASP are registered trademarks of the OWASP Foundation, Inc.
+Open Worldwide Application Security Project और OWASP, OWASP Foundation, Inc. के registered trademarks हैं।
