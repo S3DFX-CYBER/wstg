@@ -1,32 +1,32 @@
-# Style Guide
+# स्टाइल गाइड
 
-The Web Security Testing Guide (WSTG) is a well-known document trusted by security professionals and organizations all over the world. These guidelines help ensure it reflects well on its many contributors and the security community.
+Web Security Testing Guide (WSTG) एक प्रसिद्ध दस्तावेज है जिस पर दुनिया भर के सुरक्षा पेशेवरों और संगठनों का भरोसा है। ये दिशानिर्देश यह सुनिश्चित करने में मदद करते हैं कि यह अपने कई योगदानकर्ताओं और सुरक्षा समुदाय को अच्छी तरह से प्रतिबिंबित करे।
 
-To maintain the quality of the WSTG, please follow these general rules.
+WSTG की गुणवत्ता बनाए रखने के लिए, कृपया इन सामान्य नियमों का पालन करें।
 
-1. Be factual, specific, and ensure paragraphs are focused on their heading.
-2. Ensure information is creditable and up to date. Provide links and citations where appropriate.
-3. Avoid duplicating content. To refer to existing content, link to it inline.
+1. तथ्यात्मक, विशिष्ट रहें और सुनिश्चित करें कि paragraphs अपने heading पर केंद्रित हों।
+2. सुनिश्चित करें कि जानकारी विश्वसनीय और अद्यतित है। जहां उचित हो links और citations प्रदान करें।
+3. सामग्री को दोहराने से बचें। मौजूदा सामग्री का संदर्भ देने के लिए, इसे inline link करें।
 
-## Write for the Reader
+## पाठक के लिए लिखें
 
-Readers of the WSTG come from many different countries and have varying levels of technical expertise. Write for an international audience with a basic technical background. Use words that are likely understood by a non-native English speaker. Use short sentences that are easy to understand.
+WSTG के पाठक कई अलग-अलग देशों से आते हैं और उनके पास तकनीकी विशेषज्ञता के अलग-अलग स्तर होते हैं। बुनियादी तकनीकी पृष्ठभूमि वाले अंतर्राष्ट्रीय दर्शकों के लिए लिखें। ऐसे शब्दों का उपयोग करें जो गैर-देशी अंग्रेजी बोलने वाले द्वारा समझे जाने की संभावना हो। छोटे वाक्यों का उपयोग करें जो समझने में आसान हों।
 
-The web tool [Hemingway](https://hemingwayapp.com/) can help you write with clarity.
+वेब टूल [Hemingway](https://hemingwayapp.com/) आपको स्पष्टता के साथ लिखने में मदद कर सकता है।
 
-## Formatting
+## फॉर्मेटिंग
 
-Use consistent formatting to help us review and publish content, and help readers to digest information. Write all content using [Markdown syntax](https://guides.github.com/features/mastering-markdown/#examples).
+हमें सामग्री की समीक्षा और प्रकाशित करने में मदद के लिए और पाठकों को जानकारी समझने में मदद के लिए consistent formatting का उपयोग करें। सभी सामग्री को [Markdown syntax](https://guides.github.com/features/mastering-markdown/#examples) का उपयोग करके लिखें।
 
-Please follow these further guidelines for formatting.
+कृपया formatting के लिए इन अतिरिक्त दिशानिर्देशों का पालन करें।
 
 ### Article Template
 
-We use an article template to help ensure topics are complete and easy to understand. Please use the [template materials](template) to structure new content.
+हम विषयों को पूर्ण और समझने में आसान बनाने में मदद के लिए एक article template का उपयोग करते हैं। कृपया नई सामग्री को structure करने के लिए [template materials](template) का उपयोग करें।
 
 ### Project Folder Structure
 
-When adding articles and images, please place articles in the appropriate sub-section directory. Place images in an `images/` folder within the article directory. Here is an example of the project structure:
+Articles और images जोड़ते समय, कृपया articles को उपयुक्त sub-section directory में रखें। Images को article directory के भीतर `images/` folder में रखें। यहाँ project structure का एक उदाहरण है:
 
 ```sh
 document/
@@ -57,7 +57,7 @@ document/
 
 ### Code Syntax Highlighting
 
-Use code fences with syntax highlighting for snippets. For example:
+Snippets के लिए syntax highlighting के साथ code fences का उपयोग करें। उदाहरण के लिए:
 
 ```md
     ```javascript
@@ -69,9 +69,9 @@ Use code fences with syntax highlighting for snippets. For example:
 
 ### Caption Images
 
-Caption images and figures using title case. Use the section and sub-section numbers, followed by the figure position in the document. Use the format `Figure <section>.<sub-section>-<position>: Caption Title`.
+Title case का उपयोग करके images और figures को caption करें। Section और sub-section numbers का उपयोग करें, इसके बाद document में figure की position। Format `Figure <section>.<sub-section>-<position>: Caption Title` का उपयोग करें।
 
-For example, caption the first image shown in section 4.8, sub-section 19 as follows:
+उदाहरण के लिए, section 4.8, sub-section 19 में दिखाई गई पहली image को इस प्रकार caption करें:
 
 ```md
 ![SSTI XVWA Example](images/SSTI_XVWA.jpeg)\
@@ -80,7 +80,7 @@ For example, caption the first image shown in section 4.8, sub-section 19 as fol
 
 ### Inline Links
 
-Add links inline. Use words in the sentence to describe them, or include their specific title. For example:
+Links को inline जोड़ें। उन्हें describe करने के लिए वाक्य में शब्दों का उपयोग करें, या उनके specific title को शामिल करें। उदाहरण के लिए:
 
 ```md
 This project provides a [style guide](style_guide.md). Some style choices are taken from the [Chicago Manual of Style](https://www.chicagomanualofstyle.org/).
@@ -88,71 +88,71 @@ This project provides a [style guide](style_guide.md). Some style choices are ta
 
 ### Inline References
 
-For resources where a link is not available, such as a whitepaper or book, we prefer a conversational in-line reference rather than any academic-styled citation. Work the title of the resource as well as its author into your text. For example:
+जिन resources के लिए link उपलब्ध नहीं है, जैसे कि whitepaper या book, हम किसी भी academic-styled citation के बजाय conversational in-line reference पसंद करते हैं। Resource के title के साथ-साथ इसके author को अपने text में शामिल करें। उदाहरण के लिए:
 
-> There are three possible cases: only the whale exists, only the petunias exist, or both the whale and petunias exist simultaneously. These possibilities are referenced in a series of books entitled *The Hitchhiker's Guide to the Galaxy,* by Douglas Adams.
+> तीन संभावित cases हैं: केवल whale मौजूद है, केवल petunias मौजूद हैं, या whale और petunias दोनों एक साथ मौजूद हैं। इन possibilities का संदर्भ *The Hitchhiker's Guide to the Galaxy* नामक पुस्तकों की एक श्रृंखला में दिया गया है, जो Douglas Adams द्वारा लिखी गई है।
 
-This format has the advantage of continuing the flow of the article and not inviting readers to jump from paragraph to paragraph, looking for an asterisk, or to another location to find a reference list. It's also easy to read and to maintain since it appears in just one place.
+इस format का फायदा यह है कि यह article के flow को जारी रखता है और पाठकों को paragraph से paragraph तक jump करने, asterisk खोजने, या reference list खोजने के लिए किसी अन्य location पर जाने के लिए आमंत्रित नहीं करता है। यह पढ़ने और maintain करने में भी आसान है क्योंकि यह केवल एक ही स्थान पर दिखाई देता है।
 
-### Bold, Italic, and Underline
+### Bold, Italic, और Underline
 
-Do not use bold, italic, or underlined text for emphasis.
+Emphasis के लिए bold, italic, या underlined text का उपयोग न करें।
 
-You may italicize a word when referring to the word itself, though the need for this in technical writing is rare. For examples, see the section [Use Correct Words](#use-correct-words). Use asterisks: `*italic*`.
+आप किसी शब्द का refer करते समय उसे italicize कर सकते हैं, हालांकि technical writing में इसकी आवश्यकता दुर्लभ है। उदाहरण के लिए, section [Use Correct Words](#use-correct-words) देखें। Asterisks का उपयोग करें: `*italic*`।
 
-## Language and Grammar
+## भाषा और व्याकरण
 
-To make the WSTG consistent and pleasant to read, please check your spelling (we use American English) and use proper grammar.
+WSTG को consistent और पढ़ने में सुखद बनाने के लिए, कृपया अपनी spelling की जांच करें (हम American English का उपयोग करते हैं) और उचित grammar का उपयोग करें।
 
-The sections below describe specific style choices to follow.
+नीचे दिए गए sections में follow करने के लिए specific style choices का वर्णन है।
 
 ### Title Case
 
-Use title case for headings, following the [Chicago Manual of Style](https://www.chicagomanualofstyle.org/book/ed17/frontmatter/toc.html). The "Chicago" tab on the website [Capitalize My Title](https://capitalizemytitle.com/#Chicago) may help.
+Headings के लिए title case का उपयोग करें, [Chicago Manual of Style](https://www.chicagomanualofstyle.org/book/ed17/frontmatter/toc.html) का पालन करते हुए। Website [Capitalize My Title](https://capitalizemytitle.com/#Chicago) पर "Chicago" tab मदद कर सकता है।
 
 ### Active Voice
 
-Avoid using passive voice. For example:
+Passive voice का उपयोग करने से बचें। उदाहरण के लिए:
 
-> Bad: "Vulnerabilities are found by running tests."  
-> Good: "Run tests to find vulnerabilities."  
+> खराब: "Vulnerabilities are found by running tests."  
+> अच्छा: "Run tests to find vulnerabilities."  
 
 ### Second Person
 
-Do not write in the first or third person, such as by using *I* or *he*. When giving technical instruction, address the reader in the second person. Use a [zero or implied subject](https://en.wikipedia.org/wiki/Subject_(grammar)#Forms_of_the_subject), or if you must, use *you*.
+First या third person में न लिखें, जैसे *I* या *he* का उपयोग करके। Technical instruction देते समय, reader को second person में address करें। [Zero या implied subject](https://en.wikipedia.org/wiki/Subject_(grammar)#Forms_of_the_subject) का उपयोग करें, या यदि आवश्यक हो, तो *you* का उपयोग करें।
 
-> Bad: "He/she/an IT monkey would run this code to test..."  
-> Better: "By running this code, you can test..."  
-> Best: "Run this code to test..."
+> खराब: "He/she/an IT monkey would run this code to test..."  
+> बेहतर: "By running this code, you can test..."  
+> सर्वश्रेष्ठ: "Run this code to test..."
 
 ### Numbering Conventions
 
-For numbers from zero to ten, write the word. For numbers higher than ten, use integers. For example:
+Zero से ten तक के numbers के लिए, शब्द लिखें। Ten से अधिक numbers के लिए, integers का उपयोग करें। उदाहरण के लिए:
 
 > One broken automated test finds 42 errors if you run it ten times.
 
-Describe simple fractions in words. For example:
+Simple fractions को शब्दों में describe करें। उदाहरण के लिए:
 
 > Half of all software developers like petunias, and a third of them like whales.
 
-When describing an approximate magnitude of monetary value, write the whole word and do not abbreviate. For example:
+Monetary value के approximate magnitude का वर्णन करते समय, पूरा शब्द लिखें और abbreviate न करें। उदाहरण के लिए:
 
-> Bad: "Security testing saves companies $18M in beer every year."  
-> Good: "Security testing saves companies eighteen million dollars in beer every year."
+> खराब: "Security testing saves companies $18M in beer every year."  
+> अच्छा: "Security testing saves companies eighteen million dollars in beer every year."
 
-For specific monetary value, use currency symbols and integers. For example:
+Specific monetary value के लिए, currency symbols और integers का उपयोग करें। उदाहरण के लिए:
 
 > A beer costs $6.75 today, and $8.25 tomorrow.
 
 ### Abbreviations
 
-Explain abbreviations the first time they appear in your document. Capitalize the appropriate words to indicate the abbreviated form. For example:
+Abbreviations को पहली बार अपने document में प्रकट होने पर explain करें। Abbreviated form को indicate करने के लिए उपयुक्त शब्दों को capitalize करें। उदाहरण के लिए:
 
 > This project contains the source code for the Web Security Testing Guide (WSTG). The WSTG is a nice and accurate book.
 
-### Lists and Punctuation
+### Lists और Punctuation
 
-Use bulleted lists when the order is unimportant. Use numbered lists for sequential steps. For each line, capitalize the first word. If the line is a sentence or completes a sentence, end with a period. For example:
+जब order महत्वहीन हो तो bulleted lists का उपयोग करें। Sequential steps के लिए numbered lists का उपयोग करें। प्रत्येक line के लिए, पहले शब्द को capitalize करें। यदि line एक sentence है या sentence को complete करती है, तो period के साथ समाप्त करें। उदाहरण के लिए:
 
 > Testing this scenario will:
 >
@@ -172,83 +172,83 @@ Use bulleted lists when the order is unimportant. Use numbered lists for sequent
 > - Beef jerky
 > - Chocolate
 
-For lists in a sentence, use serial or [Oxford commas](https://www.grammarly.com/blog/what-is-the-oxford-comma-and-why-do-people-care-so-much-about-it/). For example:
+एक sentence में lists के लिए, serial या [Oxford commas](https://www.grammarly.com/blog/what-is-the-oxford-comma-and-why-do-people-care-so-much-about-it/) का उपयोग करें। उदाहरण के लिए:
 
 > Test the application using automated tests, static code review, and penetration tests.
 
-### Use Correct Words
+### सही शब्दों का उपयोग करें
 
-The following section covers some frequently misused words and instructions on how to correctly use them.
+निम्नलिखित section में कुछ अक्सर गलत उपयोग किए जाने वाले शब्द और उन्हें सही तरीके से उपयोग करने के निर्देश शामिल हैं।
 
 #### *and/or*
 
-While sometimes used in legal documents, *and/or* leads to ambiguity and confusion in technical writing. Instead, use *or*, which in the English language includes *and*. For example:
+जबकि कभी-कभी legal documents में उपयोग किया जाता है, *and/or* technical writing में अस्पष्टता और भ्रम की ओर ले जाता है। इसके बजाय, *or* का उपयोग करें, जो English भाषा में *and* को शामिल करता है। उदाहरण के लिए:
 
-> Bad: "The code will output an error number and/or description."  
-> Good: "The code will output an error number or description."
+> खराब: "The code will output an error number and/or description."  
+> अच्छा: "The code will output an error number or description."
 
-The latter sentence does not exclude the possibility of having both an error number and description.
+बाद वाला sentence error number और description दोनों होने की possibility को exclude नहीं करता है।
 
-If you need to specify all possible outcomes, use a list:
+यदि आपको सभी संभावित outcomes को specify करने की आवश्यकता है, तो list का उपयोग करें:
 
 > "The code will output an error number, or a description, or both."
 
 #### *frontend, backend*
 
-While it's true that the English language evolves over time, these are not yet words.
+जबकि यह सच है कि English भाषा समय के साथ विकसित होती है, ये अभी तक शब्द नहीं हैं।
 
-When referring to nouns, use *front end* and *back end*. For example:
+Nouns का refer करते समय, *front end* और *back end* का उपयोग करें। उदाहरण के लिए:
 
 > Security is equally important on the front end as it is on the back end.
 
-As a descriptive adverb, use the hyphenated *front-end* and *back-end*.
+Descriptive adverb के रूप में, hyphenated *front-end* और *back-end* का उपयोग करें।
 
 > Both front-end developers and back-end developers are responsible for application security.
 
 #### *whitebox*, *blackbox*, *greybox*
 
-These are not words.
+ये शब्द नहीं हैं।
 
-As nouns, use *white box*, *black box*, and *grey box*. These nouns rarely appear in connection with cybersecurity.
+Nouns के रूप में, *white box*, *black box*, और *grey box* का उपयोग करें। ये nouns cybersecurity के संबंध में शायद ही कभी दिखाई देते हैं।
 
 > My cat enjoys jumping into that grey box.
 
-As adverbs, use the hyphenated *white-box*, *black-box*, and *grey-box*. Do not use capitalization unless the words are in a title.
+Adverbs के रूप में, hyphenated *white-box*, *black-box*, और *grey-box* का उपयोग करें। Capitalization का उपयोग न करें जब तक कि शब्द title में न हों।
 
 > While white-box testing involves knowledge of source code, black-box testing does not. A grey-box test is somewhere in-between.
 
 #### *ie*, *eg*
 
-These are letters.
+ये letters हैं।
 
-The abbreviation *ie* refers to the Latin `id est`, which means "in other words." The abbreviation *eg* is for `exempli gratia`, translating to "for example." To use these in a sentence:
+Abbreviation *ie* Latin `id est` को refer करता है, जिसका अर्थ है "in other words"। Abbreviation *eg* `exempli gratia` के लिए है, जिसका अनुवाद "for example" है। इन्हें एक sentence में उपयोग करने के लिए:
 
 > Write using proper English, i.e. correct spelling and grammar. Use common words over uncommon ones, e.g. "learn" instead of "glean."
 
 #### *etc*
 
-These are also letters.
+ये भी letters हैं।
 
-The Latin phrase *et cetera* translates to "and the rest." It is abbreviated and typically placed at the end of a list that seems redundant to complete:
+Latin phrase *et cetera* का अनुवाद "and the rest" है। इसे abbreviated किया जाता है और typically एक list के अंत में रखा जाता है जिसे complete करना redundant लगता है:
 
 > WSTG authors like rainbow colors, such as red, yellow, green, etc.
 
-In technical writing, the use of *etc* is problematic. It assumes that the reader knows what you're talking about, and they may not. Violet is one of the colors of the rainbow, but the example above does not explicitly tell you if violet is a color that WSTG authors like.
+Technical writing में, *etc* का उपयोग problematic है। यह मान लेता है कि reader जानता है कि आप किस बारे में बात कर रहे हैं, और वे नहीं जान सकते हैं। Violet rainbow के colors में से एक है, लेकिन ऊपर दिया गया example आपको स्पष्ट रूप से नहीं बताता है कि violet एक ऐसा color है जो WSTG authors को पसंद है।
 
-It is better to be explicit and thorough than to make assumptions of the reader. Only use *etc* to avoid completing a list that was given in full earlier in the document.
+Explicit और thorough होना reader के बारे में assumptions बनाने से बेहतर है। *etc* का उपयोग केवल एक list को complete करने से बचने के लिए करें जो document में पहले पूर्ण रूप से दी गई थी।
 
 #### *...* (ellipsis)
 
-The ellipsis punctuation mark can indicate that words have been left out of a quote:
+Ellipsis punctuation mark indicate कर सकता है कि quote से शब्द छोड़ दिए गए हैं:
 
-> Linus Torvalds once said, "Once you realize that documentation should be laughed at... THEN, and only then, have you reached the level where you can safely read it and try to use it to actually implement a driver. "
+> Linus Torvalds once said, "Once you realize that documentation should be laughed at... THEN, and only then, have you reached the level where you can safely read it and try to use it to actually implement a driver."
 
-As long as the omission does not change the meaning of the quote, this is acceptable usage of ellipsis in the WSTG.
+जब तक omission quote के meaning को नहीं बदलता है, यह WSTG में ellipsis का acceptable usage है।
 
-All other uses of ellipsis, such as to indicate an unfinished thought, are not.
+Ellipsis के अन्य सभी uses, जैसे कि एक unfinished thought को indicate करना, नहीं हैं।
 
 #### *ex*
 
-While this is a word, it is likely not the word you are looking for. The word *ex* has particular meaning in the fields of finance and commerce, and may refer to a person if you are discussing your past relationships. None of these topics should appear in the WSTG.
+जबकि यह एक शब्द है, यह संभवतः वह शब्द नहीं है जिसे आप खोज रहे हैं। शब्द *ex* का finance और commerce के क्षेत्रों में particular meaning है, और यदि आप अपने past relationships पर चर्चा कर रहे हैं तो यह एक person को refer कर सकता है। इनमें से कोई भी topic WSTG में दिखाई नहीं देना चाहिए।
 
-The abbreviation may be used to mean "example" by lazy writers. Please don't be lazy, and write *example* instead.
+Abbreviation को lazy writers द्वारा "example" के लिए mean करने के लिए उपयोग किया जा सकता है। कृपया lazy न बनें, और इसके बजाय *example* लिखें।
