@@ -1,92 +1,92 @@
-# API Testing
+# API टेस्टिंग
 
-Web APIs have gained a lot of popularity as they allow third-party programs to interact with sites in a more efficient and easy way. In this guide, we will discuss some basic concepts about APIs and the way to test security for APIs.
+वेब APIs बहुत लोकप्रिय हो गए हैं क्योंकि ये दूसरे प्रोग्राम्स को वेबसाइटों से आसानी से जुड़ने देते हैं। इस गाइड में हम APIs के बारे में बुनियादी बातें और उनकी सुरक्षा कैसे टेस्ट करें, यह सीखेंगे।
 
-## Background Concepts
+## मूल अवधारणाएं
 
-REST (Representational State Transfer) is an architecture that is implemented while developer design APIs.
-Web application APIs following the REST style are called REST API.
-REST APIs use URIs (Uniform Resource Identifiers) to access resources. The generic URI syntax as defined in [RFC3986](https://tools.ietf.org/html/rfc3986) as below:
+REST (Representational State Transfer) एक तरीका है जिससे डेवलपर APIs बनाते हैं।
+REST स्टाइल में बनी Web APIs को REST API कहते हैं।
+REST APIs संसाधनों (resources) तक पहुंचने के लिए URIs (Uniform Resource Identifiers) का उपयोग करती हैं। [RFC3986](https://tools.ietf.org/html/rfc3986) के अनुसार URI की बनावट इस प्रकार होती है:
 
 > URI = scheme "://" authority "/" path [ "?" query ] [ "#" fragment ]
 
-We are interested in the path of URI as the relationship between user and resources.
-For example, `https://api.test.xyz/admin/testing/report`, this shows report of testing, there is relationship between user admin and their reports.
+हम URI के path में रुचि रखते हैं क्योंकि यह यूजर और संसाधनों के बीच संबंध दिखाता है।
+उदाहरण: `https://api.test.xyz/admin/testing/report`, यह टेस्टिंग की रिपोर्ट दिखाता है, जिसमें एडमिन यूजर और उनकी रिपोर्ट के बीच संबंध है।
 
-The path of any URI will define REST API resource model, resources are separated by a forward slash and based on Top-Down design.
-For example:
+किसी भी URI का path REST API के resource model को दर्शाता है, resources को forward slash (/) से अलग किया जाता है और Top-Down डिज़ाइन पर आधारित होते हैं।
+उदाहरण:
 
 - `https://api.test.xyz/admin/testing/report`
 - `https://api.test.xyz/admin/testing/`
 - `https://api.test.xyz/admin/`
 
-REST API requests follow the [HTTP Request Methods](https://tools.ietf.org/html/rfc7231#section-4) defined in [RFC7231](https://tools.ietf.org/html/rfc7231)
+REST API requests [RFC7231](https://tools.ietf.org/html/rfc7231) में परिभाषित [HTTP Request Methods](https://tools.ietf.org/html/rfc7231#section-4) का पालन करते हैं:
 
-| Methods | Description                                   |
-|---------|-----------------------------------------------|
-| GET     | Get the representation of resource’s state    |
-| POST    | Create a new resource                         |
-| PUT     | Update a resource                             |
-| DELETE  | Remove a resource                             |
-| HEAD    | Get metadata associated with resource’s state |
-| OPTIONS | List available methods                        |
+| Methods | विवरण                                |
+|---------|--------------------------------------|
+| GET     | संसाधन की स्थिति प्राप्त करें        |
+| POST    | नया संसाधन बनाएं                     |
+| PUT     | संसाधन को अपडेट करें                 |
+| DELETE  | संसाधन को हटाएं                      |
+| HEAD    | संसाधन से जुड़ा metadata प्राप्त करें |
+| OPTIONS | उपलब्ध methods की सूची दें          |
 
-REST APIs use the response status code of HTTP response message to notify the client about their request’s result.
+REST APIs क्लाइंट को उनके request के परिणाम के बारे में बताने के लिए HTTP response message के response status code का उपयोग करते हैं।
 
-| Response Code | Response Message      | Description                                                                                            |
-|---------------|-----------------------|--------------------------------------------------------------------------------------------------------|
-| 200           | OK                    | Success while processing client's request                                                              |
-| 201           | Created               | New resource created                                                                                   |
-| 301           | Moved Permanently     | Permanent redirection                                                                                  |
-| 304           | Not Modified          | Caching related response that returned when the client has the same copy of the resource as the server |
-| 307           | Temporary Redirect    | Temporary redirection of resource                                                                      |
-| 400           | Bad Request           | Malformed request by the client                                                                        |
-| 401           | Unauthorized          | Client is not allowed to make requests or access a particular resource                                 |
-| 402           | Forbidden             | Client is forbidden to access the resource                                                             |
-| 404           | Not Found             | Resource doesn't exist or incorrect based on the request                                               |
-| 405           | Method Not Allowed    | Invalid method or unknown method used                                                                  |
-| 500           | Internal Server Error | Server failed to process request due to an internal error                                              |
+| Response Code | Response Message      | विवरण                                                                              |
+|---------------|-----------------------|------------------------------------------------------------------------------------|
+| 200           | OK                    | क्लाइंट के request को सफलतापूर्वक प्रोसेस किया गया                                 |
+| 201           | Created               | नया संसाधन बनाया गया                                                               |
+| 301           | Moved Permanently     | स्थायी रूप से redirect किया गया                                                    |
+| 304           | Not Modified          | Caching से संबंधित response जब क्लाइंट के पास server जैसी ही copy हो            |
+| 307           | Temporary Redirect    | संसाधन का अस्थायी redirection                                                      |
+| 400           | Bad Request           | क्लाइंट द्वारा गलत request                                                         |
+| 401           | Unauthorized          | क्लाइंट को request करने या किसी संसाधन तक पहुंचने की अनुमति नहीं है                |
+| 402           | Forbidden             | क्लाइंट को संसाधन तक पहुंचने से रोका गया है                                        |
+| 404           | Not Found             | संसाधन मौजूद नहीं है या request के आधार पर गलत है                                  |
+| 405           | Method Not Allowed    | अमान्य method या अज्ञात method का उपयोग किया गया                                  |
+| 500           | Internal Server Error | आंतरिक त्रुटि के कारण server request को प्रोसेस नहीं कर सका                       |
 
-HTTP headers are used in requests and responses.
-While making API requests, Content-Type header is used and is set to `application/json` because the message body contains JSON data format.
+HTTP headers का उपयोग requests और responses में किया जाता है।
+API requests करते समय, Content-Type header का उपयोग किया जाता है और इसे `application/json` पर सेट किया जाता है क्योंकि message body में JSON data format होता है।
 
-Web authentication types are based on:
+Web authentication के प्रकार इन पर आधारित हैं:
 
-- Bearer Tokens: Identified by the `Authorization: Bearer <token>` header. Once a user logs in, they are provided with a bearer token that is sent on every request in order to authenticate and authorize the user to access OAuth 2.0 protected resources.
-- HTTP Cookies: Identified by the `Cookie: <name>=<unique value>` header. On user login success, the server replies with a `Set-Cookie` header specifying its name and unique value. On every request, the browser automatically appends it to the requests going to that server, following [SOP](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
-- Basic HTTP authentication: Identified by the `Authorization: Basic <base64 value>` header. Once a user is trying to login, the request is sent with the mentioned header containing the a base64 value, having its content as `username:password`. This is one of the weakest forms of authentication as it transmits the username and password on every request in an encoded manner, which can be easily retrieved.
+- Bearer Tokens: `Authorization: Bearer <token>` header से पहचाने जाते हैं। एक बार यूजर लॉगिन करने के बाद, उन्हें एक bearer token दिया जाता है जो हर request पर भेजा जाता है ताकि यूजर को authenticate और authorize किया जा सके और OAuth 2.0 protected resources तक पहुंच मिल सके।
+- HTTP Cookies: `Cookie: <name>=<unique value>` header से पहचाने जाते हैं। यूजर के सफल लॉगिन पर, server `Set-Cookie` header के साथ reply करता है जिसमें इसका नाम और unique value होती है। हर request पर, browser स्वचालित रूप से इसे उस server को जाने वाली requests में जोड़ देता है, [SOP](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) का पालन करते हुए।
+- Basic HTTP authentication: `Authorization: Basic <base64 value>` header से पहचाना जाता है। जब यूजर लॉगिन करने की कोशिश करता है, तो request उल्लिखित header के साथ भेजा जाता है जिसमें base64 value होती है, जिसकी सामग्री `username:password` होती है। यह authentication के सबसे कमजोर रूपों में से एक है क्योंकि यह हर request पर username और password को encoded रूप में transmit करता है, जिसे आसानी से retrieve किया जा सकता है।
 
-## How to Test
+## कैसे टेस्ट करें
 
-### Generic Testing Method
+### सामान्य टेस्टिंग विधि
 
-Step 1: List endpoint and make different request method: Login with user profile and use a spider tool to list the endpoints of this role.
-To examine the endpoints, you will need to make different request methods and observe how the API behaves.
+Step 1: Endpoint की सूची बनाएं और अलग-अलग request method बनाएं: यूजर प्रोफाइल के साथ लॉगिन करें और इस role के endpoints की सूची बनाने के लिए spider tool का उपयोग करें।
+Endpoints की जांच करने के लिए, आपको अलग-अलग request methods बनाने और देखने की जरूरत होगी कि API कैसे व्यवहार करता है।
 
-Step 2: Exploit bugs - As know how to list endpoints and examine endpoints with HTTP methods at step 1, we will find some way to exploit bug. Some testing strategies are below:
+Step 2: Bugs का फायदा उठाएं - जैसा कि step 1 में endpoints की सूची बनाना और HTTP methods के साथ endpoints की जांच करना सीखा, हम bug का फायदा उठाने के कुछ तरीके खोजेंगे। कुछ टेस्टिंग रणनीतियां नीचे दी गई हैं:
 
 - IDOR testing
 - Privilege escalation
 
-### Specific Testing – (Token-Based) Authentication
+### विशिष्ट टेस्टिंग – (Token-Based) Authentication
 
-Token-based authentication is implemented by sending a signed token (verified by the server) with each HTTP request.
+Token-based authentication हर HTTP request के साथ एक signed token (server द्वारा verified) भेजकर लागू किया जाता है।
 
-The most commonly used token format is the JSON Web Token (JWT), defined in [RFC7519](https://tools.ietf.org/html/rfc7519). The [Testing JSON Web Tokens](/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/10-Testing_JSON_Web_Tokens.md) guide contains further details on how to test JWTs.
+सबसे अधिक उपयोग किया जाने वाला token format JSON Web Token (JWT) है, जो [RFC7519](https://tools.ietf.org/html/rfc7519) में परिभाषित है। [Testing JSON Web Tokens](/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/10-Testing_JSON_Web_Tokens.md) गाइड में JWTs को कैसे टेस्ट करें इसके बारे में अधिक जानकारी है।
 
-## Related Test Cases
+## संबंधित टेस्ट केस
 
 - [IDOR](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.md)
 - [Privilege escalation](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/05-Authorization_Testing/03-Testing_for_Privilege_Escalation.md)
-- All [Session Management](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing/06-Session_Management_Testing) test cases
+- सभी [Session Management](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing/06-Session_Management_Testing) test cases
 - [Testing JSON Web Tokens](/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/10-Testing_JSON_Web_Tokens.md)
 
-## Tools
+## टूल्स
 
 - ZAP
 - Burp suite
 
-## References
+## संदर्भ
 
 - [REST HTTP Methods](https://restfulapi.net/http-methods/)
 - [RFC3986 URI](https://tools.ietf.org/html/rfc3986)
