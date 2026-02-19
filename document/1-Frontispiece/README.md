@@ -1,18 +1,18 @@
-# Frontispiece
+# मुख पृष्ठ
 
-## Welcome
+## स्वागत है
 
-> As we focus on incremental improvement, this release introduces numerous updates. We've standardized scenario formats to create a better reading experience, added objectives for each testing scenario, merged sections, and added new scenarios on some modern testing topics.
+> जैसे-जैसे हम incremental improvement पर ध्यान केंद्रित करते हैं, यह release कई updates लाता है। हमने बेहतर reading experience बनाने के लिए scenario formats को standardized किया है, प्रत्येक testing scenario के लिए objectives जोड़े हैं, sections को merge किया है, और कुछ आधुनिक testing topics पर नए scenarios जोड़े हैं।
 >
 > — Rick Mitchell
 
-OWASP thanks the many authors, reviewers, and editors for their hard work in bringing this guide to where it is today. If you have any comments or suggestions on the Testing Guide, please feel free to open an Issue or submit a fix/contribution via Pull Request to our [GitHub repository](https://github.com/OWASP/wstg/).
+OWASP कई authors, reviewers और editors को इस guide को आज जहां है वहां लाने में उनकी मेहनत के लिए धन्यवाद देता है। यदि आपके पास Testing Guide पर कोई comments या suggestions हैं, तो कृपया बेझिझक Issue खोलें या हमारे [GitHub repository](https://github.com/OWASP/wstg/) में Pull Request के माध्यम से fix/contribution submit करें।
 
-## Copyright and Licensee
+## Copyright और License
 
 Copyright (c) 2025 The OWASP Foundation.
 
-This document is released under the [Creative Commons 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/). Please read and understand the license and copyright conditions.
+यह document [Creative Commons 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) के तहत जारी किया गया है। कृपया license और copyright शर्तों को पढ़ें और समझें।
 
 ## Leaders
 
@@ -58,7 +58,7 @@ This document is released under the [Creative Commons 4.0 License](https://creat
 - Muhammed Anees
 - Ramzi Fazah
 
-## Reviewers or Editors
+## Reviewers या Editors
 
 - Abhi M Balakrishnan
 - Asharaf Ali
@@ -85,21 +85,21 @@ This document is released under the [Creative Commons 4.0 License](https://creat
 
 ## Trademarks
 
-- Java, Java Web Server, and JSP are registered trademarks of Sun Microsystems, Inc.
-- Merriam-Webster is a trademark of Merriam-Webster, Inc.
-- Microsoft is a registered trademark of Microsoft Corporation.
-- Octave is a service mark of Carnegie Mellon University.
-- Open Worldwide Application Security Project and OWASP are registered trademarks of the OWASP Foundation, Inc.
-- VeriSign and Thawte are registered trademarks of VeriSign, Inc.
-- Visa is a registered trademark of VISA USA.
+- Java, Java Web Server, और JSP, Sun Microsystems, Inc. के registered trademarks हैं।
+- Merriam-Webster, Merriam-Webster, Inc. का trademark है।
+- Microsoft, Microsoft Corporation का registered trademark है।
+- Octave, Carnegie Mellon University का service mark है।
+- Open Worldwide Application Security Project और OWASP, OWASP Foundation, Inc. के registered trademarks हैं।
+- VeriSign और Thawte, VeriSign, Inc. के registered trademarks हैं।
+- Visa, VISA USA का registered trademark है।
 
-All other products and company names may be trademarks of their respective owners. Use of a term in this document should not be regarded as affecting the validity of any trademark or service mark.
+अन्य सभी products और company names उनके respective owners के trademarks हो सकते हैं। इस document में किसी term का उपयोग किसी भी trademark या service mark की validity को प्रभावित करने वाला नहीं माना जाना चाहिए।
 
-## Contacting OWASP
+## OWASP से संपर्क करें
 
-Contact details for the [OWASP Foundation](https://owasp.org/) are available [online](https://owasp.org/contact/). If you have a question concerning a particular project, we strongly recommend using the [Google Group](https://groups.google.com/a/owasp.org/forum/) for that project. Many questions can also be answered by searching the [OWASP](https://owasp.org/) site, so please check there first.
+[OWASP Foundation](https://owasp.org/) के लिए संपर्क विवरण [online](https://owasp.org/contact/) उपलब्ध हैं। यदि आपके पास किसी विशेष project के बारे में कोई प्रश्न है, तो हम दृढ़ता से सिफारिश करते हैं कि उस project के लिए [Google Group](https://groups.google.com/a/owasp.org/forum/) का उपयोग करें। कई प्रश्नों का उत्तर [OWASP](https://owasp.org/) site को search करके भी दिया जा सकता है, इसलिए कृपया पहले वहां check करें।
 
-### Follow Us
+### हमें Follow करें
 
 [![Follow OWASP on LinkedIn](images/follow_badge.png)](https://www.linkedin.com/company/owasp/)
 
