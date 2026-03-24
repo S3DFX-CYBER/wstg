@@ -58,7 +58,7 @@
 
 #### 4.1.3 [Review Webserver Metafiles for Information Leakage](4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage.md)
 
-#### 4.1.4 [Enumerate Applications on Webserver](4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver.md)
+#### 4.1.4 [Attack Surface Identification](4-Web_Application_Security_Testing/01-Information_Gathering/04-Attack_Surface_Identification.md)
 
 #### 4.1.5 [Review Web Page Content for Information Leakage](4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Web_Page_Content_for_Information_Leakage.md)
 
@@ -224,9 +224,9 @@
 
 #### 4.7.14 [Testing for Incubated Vulnerability](4-Web_Application_Security_Testing/07-Input_Validation_Testing/14-Testing_for_Incubated_Vulnerability.md)
 
-#### 4.7.15 [Testing for HTTP Splitting Smuggling](4-Web_Application_Security_Testing/07-Input_Validation_Testing/15-Testing_for_HTTP_Splitting_Smuggling.md)
+#### 4.7.15 [Testing for HTTP Response Splitting](4-Web_Application_Security_Testing/07-Input_Validation_Testing/15-Testing_for_HTTP_Response_Splitting.md)
 
-#### 4.7.16 [Testing for HTTP Incoming Requests](4-Web_Application_Security_Testing/07-Input_Validation_Testing/16-Testing_for_HTTP_Incoming_Requests.md)
+#### 4.7.16 [Testing for HTTP Request Smuggling](4-Web_Application_Security_Testing/07-Input_Validation_Testing/16-Testing_for_HTTP_Request_Smuggling.md)
 
 #### 4.7.17 [Testing for Host Header Injection](4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection.md)
 
@@ -235,6 +235,8 @@
 #### 4.7.19 [Testing for Server-Side Request Forgery](4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery.md)
 
 #### 4.7.20 [Testing for Mass Assignment](4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment.md)
+
+#### 4.7.21 [Testing for CSV Injection](4-Web_Application_Security_Testing/07-Input_Validation_Testing/21-Testing_for_CSV_Injection.md)
 
 ### 4.8 [Testing for Error Handling](4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/README.md)
 
@@ -250,7 +252,7 @@
 
 #### 4.9.3 [Testing for Sensitive Information Sent via Unencrypted Channels](4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/03-Testing_for_Sensitive_Information_Sent_via_Unencrypted_Channels.md)
 
-#### 4.9.4 [Testing for Weak Encryption](4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption.md)
+#### 4.9.4 [Testing for Weak Cryptographic Primitives](4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Cryptographic_Primitives.md)
 
 ### 4.10 [Business Logic Testing](4-Web_Application_Security_Testing/10-Business_Logic_Testing/README.md)
 

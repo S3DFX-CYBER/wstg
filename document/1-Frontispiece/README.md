@@ -30,6 +30,7 @@ Copyright (c) 2025 The OWASP Foundation.
 - Alessia Michela Di Campi
 - Elie Saad
 - Felix Sieges
+- Himasree Kolathur
 - Ismael Goncalves
 - Janos Zold
 - Jeremy Bonghwan Choi
@@ -39,6 +40,7 @@ Copyright (c) 2025 The OWASP Foundation.
 - Manh Pham Tien
 - Mark Clayton
 - Meysam Bal-afkan
+- Omar Jezi
 - Or Asaf
 - Phu Nguyen (Tony)
 - rbsec
@@ -49,7 +51,6 @@ Copyright (c) 2025 The OWASP Foundation.
 - Stefano Calzavara
 - Tal Argoni
 - Victoria Drake
-- Omar Jezi
 
 ## Graphic Designers
 
