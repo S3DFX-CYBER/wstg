@@ -28,6 +28,7 @@ Copyright (c) 2025 The OWASP Foundation.
 
 - Aaron Williams
 - Alessia Michela Di Campi
+- Alexander Bas
 - Elie Saad
 - Felix Sieges
 - Himasree Kolathur
@@ -40,6 +41,7 @@ Copyright (c) 2025 The OWASP Foundation.
 - Manh Pham Tien
 - Mark Clayton
 - Meysam Bal-afkan
+- Mohamed Bassia (0xBassia)
 - Omar Jezi
 - Or Asaf
 - Phu Nguyen (Tony)

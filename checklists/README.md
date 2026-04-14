@@ -7,7 +7,7 @@ Contained in this folder is an Excel file which provides the following worksheet
 - _Risk Assessment Calculator_ - a dropdown driven sheet for calculating likelihood and impact scores, and a qualitative overall risk rating.
 - _References_ - provides the lists/sets that the calculator is based upon.
 
-**Note:** The current (Excel) checklist is based on v4.2 of the OWASP Testing Guide, as content for v5 is still under development.
+**Note:** The current (Excel) checklist is based on v4.2 of the OWASP Testing Guide, as content for other versions is still under development.
 
 ## Direct Link
 
@@ -16,7 +16,7 @@ Contained in this folder is an Excel file which provides the following worksheet
 
 ## Excel File Hash
 
-SHA-256: 76953e44d73abe391ec7812196d8440b38e2637a5f880b69d915366942d376bc
+SHA-256: 4536af2cdf0c7bdee6685e5c65cd82db3e52038144adf87c443593ae8be219e6
 
 ## Google Sheets Template
 
