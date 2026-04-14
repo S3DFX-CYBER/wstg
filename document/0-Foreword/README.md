@@ -6,7 +6,6 @@ Open Worldwide Application Security Project® (OWASP®) में, हम दु
 
 यह कहने की आवश्यकता नहीं है कि आप इस पर सुरक्षा परीक्षण किए बिना एक सुरक्षित application नहीं बना सकते हैं। Testing एक सुरक्षित system बनाने के व्यापक दृष्टिकोण का हिस्सा है। कई software development organizations अपनी मानक software development process के हिस्से के रूप में सुरक्षा परीक्षण को शामिल नहीं करते हैं। इससे भी बुरा यह है कि कई सुरक्षा विक्रेता अलग-अलग स्तर की गुणवत्ता और कठोरता के साथ परीक्षण प्रदान करते हैं।
 
-
 सुरक्षा परीक्षण, अपने आप में, एक application कितना सुरक्षित है इसका विशेष रूप से अच्छा stand alone measure नहीं है, क्योंकि एक attacker के पास application को तोड़ने के अनगिनत तरीके हो सकते हैं, और उन सभी का परीक्षण करना संभव नहीं है। हम खुद को सुरक्षित नहीं hack कर सकते क्योंकि हमारे पास परीक्षण और रक्षा करने के लिए सीमित समय होता है जबकि एक attacker के पास ऐसी बाधाएं नहीं होती हैं।
 
 अन्य OWASP projects जैसे Code Review Guide, Development Guide और [ZAP](https://www.zaproxy.org/) जैसे tools के साथ, यह सुरक्षित applications बनाने और maintain करने की दिशा में एक शानदार शुरुआत है। यह Testing Guide आपको दिखाएगा कि अपने running application की सुरक्षा को कैसे verify करें। मैं अत्यधिक सिफारिश करता हूं कि इन guides का उपयोग अपनी application security initiatives के हिस्से के रूप में करें।
