@@ -17,7 +17,6 @@
 संरक्षक (Maintainer/Translator):[Savio D'souza](https://github.com/S3DFX-CYBER)
 संरक्षक (Co-Maintainer/Translator):[Pavan Shanmukha Madhav Gunda](https://github.com/pand-coder)
 
-
 यदि आप इस अनुवाद का उपयोग रिपोर्ट, प्रस्तुति या प्रशिक्षण में करते हैं, तो कृपया हमें श्रेय (credit) दें।
 
 # OWASP Web Security Testing Guide (WSTG) – हिंदी संस्करण
