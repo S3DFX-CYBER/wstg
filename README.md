@@ -140,4 +140,4 @@ https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
 ---
 
-OWASP और Open Web Application Security Project, OWASP Foundation, Inc. के registered trademarks हैं।
+OWASP और Open Worldwide Application Security Project, OWASP Foundation, Inc. के registered trademarks हैं।
