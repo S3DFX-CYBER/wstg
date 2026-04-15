@@ -9,7 +9,7 @@
 यह OWASP Web Security Testing Guide (WSTG) के latest संस्करण का एक सामुदायिक हिंदी अनुवाद प्रस्ताव है।
 इस अनुवाद का उद्देश्य सामग्री को सरल, स्पष्ट और आसानी से समझने योग्य हिंदी में उपलब्ध कराना है, ताकि छात्र, डेवलपर्स और सुरक्षा पेशेवर बिना भाषा की बाधा के इसे सीख सकें।
 
-- यह अनुवाद OWASP Web Security Testing Guide (WSTG) के आधिकारिक repo             (https://github.com/OWASP/wstg) पर आधारित है।
+- यह अनुवाद OWASP Web Security Testing Guide (WSTG) के आधिकारिक repository (<https://github.com/OWASP/wstg>) पर आधारित है।
 - `/document/`में मौजूद सभी दस्तावेज़ों का हिंदी में अनुवाद किया गया है।
 
 सुझाव और सुधार का स्वागत है! कृपया अपने सुझाव Issue या Pull Request के रूप में भेजें।
@@ -33,16 +33,14 @@ WSTG एक पूरी गाइड है जो वेब एप्लिक
 
 हम अभी **Version 5.0** पर काम कर रहे हैं।  
 
-- वर्तमान ड्राफ्ट देखें:  
-(https://github.com/OWASP/wstg/tree/master/document) 
+- वर्तमान ड्राफ्ट देखें: <https://github.com/OWASP/wstg/tree/master/document>
 
 नवीनतम स्थिर संस्करण:  
 
-- **Version 4.2**  
-https://github.com/OWASP/wstg/releases/tag/v4.2  
+- **Version 4.2**
+  <https://github.com/OWASP/wstg/releases/tag/v4.2>  
 
-ऑनलाइन पढ़ें:  
-https://owasp.org/www-project-web-security-testing-guide/v42/
+ऑनलाइन पढ़ें: <https://owasp.org/www-project-web-security-testing-guide/v42/>
 
 ---
 
@@ -71,8 +69,7 @@ https://owasp.org/www-project-web-security-testing-guide/v42/
 
 `latest` या `stable` लिंक समय के साथ बदल सकते हैं।
 
-उदाहरण:  
-https://owasp.org/www-project-web-security-testing-guide/v42/
+उदाहरण: <https://owasp.org/www-project-web-security-testing-guide/v42/>
 
 ---
 
@@ -90,8 +87,7 @@ https://owasp.org/www-project-web-security-testing-guide/v42/
 शुरू करने के लिए यह पढ़ें:  
 CONTRIBUTING.md  
 
-पहली बार योगदान कर रहे हैं?  
-https://github.com/OWASP/wstg/contribute  
+पहली बार योगदान कर रहे हैं? <https://github.com/OWASP/wstg/contribute>  
 
 सफल Contributors के नाम प्रोजेक्ट में जोड़े जाते हैं।
 
@@ -100,8 +96,8 @@ https://github.com/OWASP/wstg/contribute
 ## हमसे जुड़ें
 
 ### Slack
-1. OWASP Slack जॉइन करें:  
-https://owasp.org/slack/invite  
+
+1. OWASP Slack जॉइन करें: <https://owasp.org/slack/invite>  
 
 2. चैनल जॉइन करें:  
 `#testing-guide`
@@ -110,8 +106,7 @@ https://owasp.org/slack/invite
 
  𝕏(Twitter) [@owasp_wstg](https://x.com/owasp_wstg)
 
-Google Group:  
-https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
+Google Group: <https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project>
 
 ---
 
@@ -119,6 +114,7 @@ https://groups.google.com/a/owasp.org/forum/#!forum/testing-guide-project
 
 - [Rick Mitchell](https://github.com/kingthorin)
 - [Elie Saad](https://github.com/ThunderSon)
+
 ---
 
 ## मुख्य टीम
