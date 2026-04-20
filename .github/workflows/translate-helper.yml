@@ -9,9 +9,10 @@ on:
 
 jobs:
   translate-helper:
+    # Simplified 'if' to handle the null/false inconsistency
     if: |
-      github.event.pull_request.draft == false && 
-      contains(github.event.pull_request.labels.*.name, 'ready-to-translate')
+      contains(github.event.pull_request.labels.*.name, 'ready-to-translate') &&
+      github.event.pull_request.draft != true
     
     runs-on: ubuntu-latest
     
@@ -36,11 +37,13 @@ jobs:
       - name: Detect changes
         id: files
         run: |
+          # Use head.sha and base.ref from the event to ensure we get the right diff
           git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=1
           git diff --name-only "origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.sha }}" -- '*.md' > changed_files.txt
           
           if [ ! -s changed_files.txt ]; then
             echo "No markdown changes detected."
+            # Don't fail the job, just stop here
             exit 0
           fi
 
