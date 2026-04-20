@@ -1,11 +1,18 @@
 {
-  "Buffer Overflow": "Buffer Overflow",
-  "Cross-Site Scripting": "Cross-Site Scripting",
-  "SQL Injection": "SQL Injection",
-  "Command Injection": "Command Injection",
-  "Authentication": "Authentication",
-  "Authorization": "Authorization",
-  "Session Management": "Session Management",
-  "Cryptography": "Cryptography",
-  "OWASP": "OWASP"
+  "Buffer Overflow": "Buffer Overflow (बफ़र ओवरफ़्लो)",
+  "Cross-Site Scripting": "Cross-Site Scripting (XSS)",
+  "SQL Injection": "SQL Injection (SQL इंजेक्शन)",
+  "Command Injection": "Command Injection (कमांड इंजेक्शन)",
+  "Authentication": "Authentication (प्रमाणीकरण)",
+  "Authorization": "Authorization (प्राधिकरण)",
+  "Session Management": "Session Management (सत्र प्रबंधन)",
+  "Cryptography": "Cryptography (क्रिप्टोग्राफी)",
+  "OWASP": "OWASP",
+  "Broken Access Control": "Broken Access Control (टूटा हुआ एक्सेस कंट्रोल)",
+  "Security Misconfiguration": "Security Misconfiguration (सुरक्षा गलत विन्यास)",
+  "Vulnerability": "Vulnerability (भेद्यता)",
+  "Penetration Testing": "Penetration Testing (पेनेट्रेशन टेस्टिंग)",
+  "Payload": "Payload (पेलोड)",
+  "Denial of Service": "Denial of Service (DoS)",
+  "Web Security Testing Guide": "Web Security Testing Guide (WSTG)"
 }
