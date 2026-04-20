@@ -1,132 +1,137 @@
-# The Web Security Testing Framework
+# वेब सुरक्षा परीक्षण ढांचा
 
-## Overview
+## अवलोकन
 
-This section describes a typical testing framework that can be developed within an organization. It can be seen as a reference framework comprised of techniques and tasks that are appropriate at various phases of the software development life cycle (SDLC). Companies and project teams can use this model to develop their own testing framework, and to scope testing services from vendors. This framework should not be seen as prescriptive, but as a flexible approach that can be extended and molded to fit an organization's development process and culture.
+यह अनुभाग एक विशिष्ट परीक्षण ढांचे (testing framework) का वर्णन करता है जिसे एक संगठन के भीतर विकसित किया जा सकता है। इसे तकनीकों और कार्यों से बने एक संदर्भ ढांचे के रूप में देखा जा सकता है जो सॉफ्टवेयर विकास जीवन चक्र (SDLC) के विभिन्न चरणों में उपयुक्त होते हैं। 
+कंपनियाँ और प्रोजेक्ट टीमें इस मॉडल का उपयोग अपना स्वयं का परीक्षण ढांचा विकसित करने और विक्रेताओं (vendors) से परीक्षण सेवाओं के दायरे को निर्धारित करने के लिए कर सकती हैं। इस ढांचे को अनिवार्य या आदेशात्मक नहीं माना जाना चाहिए, बल्कि एक लचीले दृष्टिकोण के रूप में देखा जाना चाहिए जिसे संगठन की विकास प्रक्रिया और संस्कृति के अनुरूप विस्तारित और ढाला जा सकता है।
 
-This section aims to help organizations build a complete strategic testing process, and is not aimed at consultants or contractors who tend to be engaged in more tactical, specific areas of testing.
 
-It is critical to understand why building an end-to-end testing framework is crucial to assessing and improving software security. In *Writing Secure Code*, Howard and LeBlanc note that issuing a security bulletin costs Microsoft at least $100,000, and it costs their customers collectively far more than that to implement the security patches. They also note that the US government's [CyberCrime web site](https://www.justice.gov/criminal-ccips) details recent criminal cases and the loss to organizations. Typical losses far exceed USD $100,000.
+इस अनुभाग का उद्देश्य संगठनों को एक पूर्ण रणनीतिक परीक्षण प्रक्रिया बनाने में मदद करना है। 
+यह उन सलाहकारों या ठेकेदारों के लिए नहीं है जो आमतौर पर परीक्षण के अधिक सामरिक (tactical) और विशिष्ट क्षेत्रों में शामिल होते हैं।
 
-With economics like this, it is little wonder why software vendors move from solely performing black-box security testing, which can only be performed on applications that have already been developed, to concentrating on testing in the early cycles of application development, such as during definition, design, and development.
 
-Many security practitioners still see security testing in the realm of penetration testing. As discussed in the previous chapter, while penetration testing has a role to play, it is generally inefficient at finding bugs and relies excessively on the skill of the tester. It should only be considered as an implementation technique, or to raise awareness of production issues. To improve the security of applications, the security quality of the software must be improved. That means testing security during the definition, design, development, deployment, and maintenance stages, and not relying on the costly strategy of waiting until code is completely built.
+यह समझना महत्वपूर्ण है कि सॉफ्टवेयर सुरक्षा के आकलन और सुधार के लिए एक 'एंड-टू-एंड' (शुरुआत से अंत तक) परीक्षण ढांचा बनाना क्यों आवश्यक है।'राइटिंग सिक्योर कोड' (Writing Secure Code) में हॉवर्ड और लेब्लांक बताते हैं कि एक सुरक्षा बुलेटिन जारी करने में माइक्रोसॉफ्ट को कम से कम $100,000 की लागत आती है, और उनके ग्राहकों को सुरक्षा पैच लागू करने में सामूहिक रूप से इससे कहीं अधिक लागत आती है।
+वे यह भी बताते हैं कि अमेरिकी सरकार की साइबर-क्राइम वेबसाइट[CyberCrime web site](https://www.justice.gov/criminal-ccips) हाल के आपराधिक मामलों और संगठनों को होने वाले नुकसान का विवरण देती है। आमतौर पर होने वाला नुकसान 100,000 अमेरिकी डॉलर से कहीं अधिक होता है।
 
-As discussed in the introduction of this document, there are many development methodologies, such as the Rational Unified Process, eXtreme and Agile development, and traditional waterfall methodologies. The intent of this guide is to suggest neither a particular development methodology, nor provide specific guidance that adheres to any particular methodology. Instead, we are presenting a generic development model, and the reader should follow it according to their company process.
+इस तरह के अर्थशास्त्र को देखते हुए, इसमें कोई आश्चर्य नहीं है कि सॉफ्टवेयर विक्रेता केवल 'ब्लैक-बॉक्स' सुरक्षा परीक्षण करने (जो केवल उन अनुप्रयोगों पर किया जा सकता है जो पहले से विकसित हो चुके हैं) के बजाय, अनुप्रयोग विकास के शुरुआती चक्रों, जैसे कि परिभाषा (definition), डिजाइन और विकास के दौरान परीक्षण पर ध्यान केंद्रित कर रहे हैं।
 
-This testing framework consists of activities that should take place:
+कई सुरक्षा व्यवसायी अभी भी सुरक्षा परीक्षण को केवल 'पेनिट्रेशन टेस्टिंग' (penetration testing) के दायरे में देखते हैं। जैसा कि पिछले अध्याय में चर्चा की गई है, हालांकि पेनिट्रेशन टेस्टिंग की अपनी भूमिका है, यह आमतौर पर बग (bugs) खोजने में अक्षम है और अत्यधिक रूप से परीक्षक (tester) के कौशल पर निर्भर करती है। इसे केवल एक कार्यान्वयन तकनीक के रूप में, या उत्पादन संबंधी समस्याओं के प्रति जागरूकता बढ़ाने के लिए माना जाना चाहिए। अनुप्रयोगों की सुरक्षा में सुधार के लिए, सॉफ्टवेयर की सुरक्षा गुणवत्ता में सुधार किया जाना चाहिए। इसका अर्थ है परिभाषा, डिजाइन, विकास, परिनियोजन (deployment) और रखरखाव के चरणों के दौरान सुरक्षा का परीक्षण करना, न कि कोड के पूरी तरह से बन जाने तक प्रतीक्षा करने की महंगी रणनीति पर निर्भर रहना।
 
-- Before development begins,
-- During definition and design,
-- During development,
-- During deployment, and
-- During maintenance and operations.
+जैसा कि इस दस्तावेज़ की प्रस्तावना में चर्चा की गई है, कई विकास पद्धतियां (development methodologies) हैं, जैसे कि रैशनल यूनिफाइड प्रोसेस (RUP), एक्सट्रीम और एजाइल (Agile) विकास, और पारंपरिक वॉटरफॉल पद्धतियां। इस गाइड का उद्देश्य न तो किसी विशेष विकास पद्धति का सुझाव देना है, और न ही कोई विशिष्ट मार्गदर्शन प्रदान करना है जो किसी विशेष पद्धति का पालन करता हो। इसके बजाय, हम एक सामान्य विकास मॉडल प्रस्तुत कर रहे हैं, और पाठक को अपनी कंपनी की प्रक्रिया के अनुसार इसका पालन करना चाहिए।
 
-## Phase 1 Before Development Begins
+यह परीक्षण ढांचा उन गतिविधियों से बना है जो निम्नलिखित चरणों में होनी चाहिए:
 
-### Phase 1.1 Define a SDLC
+- विकास शुरू होने से पहले,
+- परिभाषा और डिजाइन के दौरान,
+- विकास के दौरान ,
+- परिनियोजन के दौरान, and
+- रखरखाव और संचालन के दौरान.
 
-Before application development starts, an adequate SDLC must be defined where security is inherent at each stage.
+## चरण 1: विकास शुरू होने से पहले 
 
-### Phase 1.2 Review Policies and Standards
+### चरण 1.1: एक SDLC परिभाषित करें 
 
-Ensure that there are appropriate policies, standards, and documentation in place. Documentation is extremely important as it gives development teams guidelines and policies that they can follow. People can only do the right thing if they know what the right thing is.
+अनुप्रयोग विकास शुरू होने से पहले, एक पर्याप्त सॉफ़्टवेयर विकास जीवन चक्र (SDLC) परिभाषित किया जाना चाहिए जिसमें प्रत्येक चरण में सुरक्षा अंतर्निहित हो।
 
-If the application is to be developed in Java, it is essential that there is a Java secure coding standard. If the application is to use cryptography, it is essential that there is a cryptography standard. No policies or standards can cover every situation that the development team will face. By documenting the common and predictable issues, there will be fewer decisions that need to be made during the development process.
+### चरण 1.2: नीतियों और मानकों की समीक्षा करें
 
-### Phase 1.3 Develop Measurement and Metrics Criteria and Ensure Traceability
+सुनिश्चित करें कि उपयुक्त नीतियां, मानक और दस्तावेज़ीकरण मौजूद हैं। दस्तावेज़ीकरण अत्यंत महत्वपूर्ण है क्योंकि यह विकास टीमों को दिशानिर्देश और नीतियां देता है जिनका वे पालन कर सकते हैं। लोग सही काम तभी कर सकते हैं जब उन्हें पता हो कि सही काम क्या है।
 
-Before development begins, plan the measurement program. By defining criteria that need to be measured, it provides visibility into defects in both the process and product. It is essential to define the metrics before development begins, as there may be a need to modify the process in order to capture the data.
+यदि अनुप्रयोग जावा (Java) में विकसित किया जाना है, तो यह आवश्यक है कि जावा सुरक्षित कोडिंग मानक (Java secure coding standard) हो। यदि अनुप्रयोग में क्रिप्टोग्राफी का उपयोग किया जाना है, तो क्रिप्टोग्राफी मानक का होना आवश्यक है। कोई भी नीति या मानक विकास टीम के सामने आने वाली हर स्थिति को कवर नहीं कर सकता। सामान्य और अनुमानित समस्याओं का दस्तावेज़ीकरण करके, विकास प्रक्रिया के दौरान लिए जाने वाले निर्णयों की संख्या कम हो जाएगी।
 
-## Phase 2 During Definition and Design
+### चरण 1.3: मापन और मेट्रिक्स मानदंड विकसित करें और ट्रैसेबिलिटी सुनिश्चित करें
 
-### Phase 2.1 Review Security Requirements
+विकास शुरू होने से पहले, मापन कार्यक्रम की योजना बनाएं। मापे जाने वाले मानदंडों को परिभाषित करने से प्रक्रिया और उत्पाद दोनों के दोषों में दृश्यता (visibility) मिलती है। विकास शुरू होने से पहले मेट्रिक्स को परिभाषित करना आवश्यक है, क्योंकि डेटा कैप्चर करने के लिए प्रक्रिया में बदलाव की आवश्यकता हो सकती है।
 
-Security requirements define how an application works from a security perspective. It is essential that the security requirements are tested. Testing in this case means testing the assumptions that are made in the requirements and testing to see if there are gaps in the requirements definitions.
+## चरण 2: परिभाषा और डिजाइन के दौरान
 
-For example, if there is a security requirement that states that users must be registered before they can get access to the whitepapers section of a website, does this mean that the user must be registered with the system or should the user be authenticated? Ensure that requirements are as unambiguous as possible.
+### चरण 2.1: सुरक्षा आवश्यकताओं की समीक्षा करें
 
-When looking for requirements gaps, consider looking at security mechanisms such as:
+सुरक्षा आवश्यकताएं परिभाषित करती हैं कि सुरक्षा के दृष्टिकोण से एक अनुप्रयोग कैसे काम करता है। यह आवश्यक है कि सुरक्षा आवश्यकताओं का परीक्षण किया जाए। इस मामले में परीक्षण का अर्थ है आवश्यकताओं में की गई धारणाओं (assumptions) का परीक्षण करना और यह देखना कि आवश्यकताओं की परिभाषाओं में कोई कमी (gap) तो नहीं है।
 
-- User management
-- Authentication
-- Authorization
-- Data confidentiality
-- Integrity
-- Accountability
-- Session management
-- Transport security
-- Tiered system segregation
-- Legislative and standards compliance (including privacy, government, and industry standards)
+उदाहरण के लिए, यदि कोई सुरक्षा आवश्यकता यह कहती है कि वेबसाइट के 'वाइटपेपर्स' (whitepapers) अनुभाग तक पहुँच प्राप्त करने से पहले उपयोगकर्ताओं को पंजीकृत होना चाहिए, तो क्या इसका मतलब यह है कि उपयोगकर्ता को सिस्टम के साथ पंजीकृत होना चाहिए या उपयोगकर्ता को प्रमाणित (authenticated) होना चाहिए? सुनिश्चित करें कि आवश्यकताएं यथासंभव स्पष्ट (unambiguous) हों।
 
-### Phase 2.2 Review Design and Architecture
+आवश्यकताओं की कमियों को खोजते समय, निम्नलिखित सुरक्षा तंत्रों पर विचार करें:
 
-Applications should have a documented design and architecture. This documentation can include models, textual documents, and other similar artifacts. It is essential to test these artifacts to ensure that the design and architecture enforce the appropriate level of security as defined in the requirements.
+- उपयोगकर्ता प्रबंधन 
+- प्रमाणीकरण
+- प्राधिकरण
+- डेटा गोपनीयता
+- अखंडता
+- जवाबदेही
+- सत्र प्रबंधन
+- परिवहन सुरक्षा
+- स्तरीय प्रणाली पृथक्करण
+- विधायी और मानक अनुपालन (जैसे गोपनीयता, सरकार और उद्योग मानक)
 
-Identifying security flaws in the design phase is not only one of the most cost-efficient places to identify flaws, but can be one of the most effective places to make changes. For example, if it is identified that the design calls for authorization decisions to be made in multiple places, it may be appropriate to consider a central authorization component. If the application is performing data validation at multiple places, it may be appropriate to develop a central validation framework (i.e. fixing input validation in one place, rather than in hundreds of places, is far cheaper).
+### चरण 2.2: डिजाइन और आर्किटेक्चर की समीक्षा करें
 
-If weaknesses are discovered, they should be given to the system architect for alternative approaches.
+अनुप्रयोगों का एक प्रलेखित डिजाइन और आर्किटेक्चर होना चाहिए। इस दस्तावेज़ में मॉडल, टेक्स्ट दस्तावेज़ और अन्य समान कलाकृतियाँ (artifacts) शामिल हो सकती हैं। इन कलाकृतियों का परीक्षण करना यह सुनिश्चित करने के लिए आवश्यक है कि डिजाइन और आर्किटेक्चर आवश्यकताओं में परिभाषित सुरक्षा के उचित स्तर को लागू करते हैं।
 
-### Phase 2.3 Create and Review UML Models
+डिजाइन चरण में सुरक्षा खामियों की पहचान करना न केवल खामियों की पहचान करने के लिए सबसे किफायती (cost-efficient) स्थानों में से एक है, बल्कि बदलाव करने के लिए सबसे प्रभावी स्थानों में से एक हो सकता है। उदाहरण के लिए, यदि यह पाया जाता है कि डिजाइन कई स्थानों पर प्राधिकरण (authorization) निर्णय लेने की मांग करता है, तो एक केंद्रीय प्राधिकरण घटक (central authorization component) पर विचार करना उचित हो सकता है। यदि अनुप्रयोग कई स्थानों पर डेटा सत्यापन (data validation) कर रहा है, तो एक केंद्रीय सत्यापन ढांचा (central validation framework) विकसित करना उचित हो सकता है।
 
-Once the design and architecture is complete, build Unified Modeling Language (UML) models that describe how the application works. In some cases, these may already be available. Use these models to confirm with the systems designers an exact understanding of how the application works. If weaknesses are discovered, they should be given to the system architect for alternative approaches.
+यदि कमजोरियां पाई जाती हैं, तो उन्हें वैकल्पिक दृष्टिकोणों के लिए सिस्टम आर्किटेक्ट को दिया जाना चाहिए।
 
-### Phase 2.4 Create and Review Threat Models
+### चरण 2.3: UML मॉडल बनाएं और उनकी समीक्षा करें
 
-Armed with design and architecture reviews and the UML models explaining exactly how the system works, undertake a threat modeling exercise. Develop realistic threat scenarios. Analyze the design and architecture to ensure that these threats have been mitigated, accepted by the business, or assigned to a third party, such as an insurance firm. When identified threats have no mitigation strategies, revisit the design and architecture with the systems architect to modify the design.
+डिजाइन और आर्किटेक्चर पूरा होने के बाद, यूनिफाइड मॉडलिंग लैंग्वेज (UML) मॉडल बनाएं जो बताते हैं कि अनुप्रयोग कैसे काम करता है। कुछ मामलों में, ये पहले से ही उपलब्ध हो सकते हैं। सिस्टम डिजाइनरों के साथ अनुप्रयोग कैसे काम करता है, इसकी सटीक समझ की पुष्टि करने के लिए इन मॉडलों का उपयोग करें।
 
-## Phase 3 During Development
+### चरण 2.4: थ्रेट मॉडल बनाएं और समीक्षा करें
 
-Theoretically, development is the implementation of a design. However, in the real world, many design decisions are made during code development. These are often smaller decisions that were either too detailed to be described in the design, or issues where no policy or standard guidance was offered. If the design and architecture were not adequate, the developer will be faced with many decisions. If there were insufficient policies and standards, the developer will be faced with even more decisions.
+डिजाइन, आर्किटेक्चर समीक्षा और UML मॉडलों से लैस होकर एक थ्रेट मॉडलिंग अभ्यास करें। वास्तविक खतरे के परिदृश्य विकसित करें। डिजाइन और आर्किटेक्चर का विश्लेषण करें ताकि यह सुनिश्चित हो सके कि इन खतरों को कम कर दिया गया है, व्यवसाय द्वारा स्वीकार कर लिया गया है, या किसी तीसरे पक्ष (जैसे बीमा फर्म) को सौंप दिया गया है। जब पहचाने गए खतरों के लिए कोई शमन रणनीति (mitigation strategy) न हो, तो डिजाइन को संशोधित करने के लिए सिस्टम आर्किटेक्ट के साथ डिजाइन और आर्किटेक्चर पर फिर से विचार करें।
 
-### Phase 3.1 Code Walkthrough
+## चरण 3: विकास के दौरान 
 
-The security team should perform a code walkthrough with the developers, and in some cases, the system architects. A code walkthrough is a high-level look at the code during which the developers can explain the logic and flow of the implemented code. It allows the code review team to obtain a general understanding of the code, and allows the developers to explain why certain things were developed the way they were.
+सैद्धांतिक रूप से, विकास एक डिजाइन का कार्यान्वयन है। हालांकि, वास्तविक दुनिया में, कोड विकास के दौरान कई डिजाइन निर्णय लिए जाते हैं। ये अक्सर छोटे निर्णय होते हैं जो या तो डिजाइन में वर्णित होने के लिए बहुत विस्तृत थे, या ऐसे मुद्दे थे जहां कोई नीति या मानक मार्गदर्शन नहीं दिया गया था। यदि डिजाइन और आर्किटेक्चर पर्याप्त नहीं थे, तो डेवलपर को कई निर्णयों का सामना करना पड़ेगा। यदि नीतियां और मानक अपर्याप्त थे, तो डेवलपर को और भी अधिक निर्णयों का सामना करना पड़ेगा।
 
-The purpose is not to perform a code review, but to understand at a high level the flow, the layout, and the structure of the code that makes up the application.
+### चरण 3.1: कोड वॉकथ्रू
 
-### Phase 3.2 Code Reviews
+सुरक्षा टीम को डेवलपर्स और कुछ मामलों में सिस्टम आर्किटेक्ट्स के साथ एक 'कोड वॉकथ्रू' करना चाहिए। कोड वॉकथ्रू कोड का एक उच्च-स्तरीय (high-level) अवलोकन है जिसके दौरान डेवलपर्स कार्यान्वित कोड के तर्क (logic) और प्रवाह (flow) की व्याख्या कर सकते हैं। यह कोड समीक्षा टीम को कोड की सामान्य समझ प्राप्त करने की अनुमति देता है, और डेवलपर्स को यह समझाने का अवसर देता है कि कुछ चीजों को उसी तरह क्यों विकसित किया गया जैसा वे हैं।
 
-Armed with a good understanding of how the code is structured and why certain things were coded the way they were, the tester can now examine the actual code for security defects.
+इसका उद्देश्य कोड समीक्षा (code review) करना नहीं है, बल्कि अनुप्रयोग बनाने वाले कोड के प्रवाह, लेआउट और संरचना को उच्च स्तर पर समझना है।
 
-Static code reviews validate the code against a set of checklists, including:
+### चरण 3.2: कोड समीक्षा
 
-- Business requirements for availability, confidentiality, and integrity;
-- OWASP Guide or Top 10 Checklists for technical exposures (depending on the depth of the review);
-- Specific issues relating to the language or framework in use, such as the Scarlet paper for PHP or [Microsoft Secure Coding checklists for ASP.NET](https://msdn.microsoft.com/en-us/library/ff648269.aspx); and
-- Any industry-specific requirements, such as Sarbanes-Oxley 404, COPPA, ISO/IEC 27002, APRA, HIPAA, Visa Merchant guidelines, or other regulatory regimes.
+कोड की संरचना कैसे की गई है और कुछ चीजों को उसी तरह क्यों कोड किया गया है, इसकी अच्छी समझ के साथ, परीक्षक अब सुरक्षा दोषों के लिए वास्तविक कोड की जांच कर सकता है।
 
-In terms of return on resources invested (mostly time), static code reviews produce far higher quality returns than any other security review method and rely least on the skill of the reviewer. However, they are not a silver bullet and need to be considered carefully within a full-spectrum testing regime.
+स्टैटिक कोड समीक्षा चेकलिस्ट के एक सेट के विरुद्ध कोड को मान्य करती है, जिसमें शामिल हैं:
 
-For more details on OWASP checklists, please refer to the latest edition of the [OWASP Top 10](https://owasp.org/www-project-top-ten/).
+- उपलब्धता (availability), गोपनीयता (confidentiality) और अखंडता (integrity) के लिए व्यावसायिक आवश्यकताएं;
+- तकनीकी एक्सपोजर के लिए OWASP गाइड या टॉप 10 चेकलिस्ट  (depending on the depth of the review);
+- उपयोग में आने वाली भाषा या फ्रेमवर्क से संबंधित विशिष्ट मुद्दे, जैसे PHP के लिए स्कारलेट पेपर या ASP.NET के लिए माइक्रोसॉफ्ट सिक्योर कोडिंग चेकलिस्ट;[Microsoft Secure Coding checklists for ASP.NET](https://msdn.microsoft.com/en-us/library/ff648269.aspx); 
+- कोई भी उद्योग-विशिष्ट आवश्यकताएं, जैसे Sarbanes-Oxley 404, COPPA, ISO/IEC 27002, APRA, HIPAA, वीज़ा मर्चेंट दिशानिर्देश, या अन्य नियामक शासन।
 
-## Phase 4 During Deployment
+निवेश किए गए संसाधनों (मुख्यतः समय) के प्रतिफल के मामले में, स्टैटिक कोड समीक्षा किसी भी अन्य सुरक्षा समीक्षा पद्धति की तुलना में कहीं अधिक उच्च गुणवत्ता वाले परिणाम देती है और समीक्षा करने वाले के कौशल पर सबसे कम निर्भर करती है। हालांकि, ये कोई रामबाण (silver bullet) नहीं हैं और इन्हें पूर्ण-स्पेक्ट्रम परीक्षण शासन के भीतर सावधानीपूर्वक विचार करने की आवश्यकता है।
 
-### Phase 4.1 Application Penetration Testing
+OWASP चेकलिस्ट के बारे में अधिक जानकारी के लिए, कृपया इसके नवीनतम संस्करण को देखें: [OWASP Top 10](https://owasp.org/www-project-top-ten/).
 
-Having tested the requirements, analyzed the design, and performed code review, it might be assumed that all issues have been caught. Hopefully this is the case, but penetration testing the application after it has been deployed provides an additional check to ensure that nothing has been missed.
+## चरण 4: परिनियोजन के दौरान
 
-### Phase 4.2 Configuration Management Testing
+### चरण 4.1: अनुप्रयोग पेनेट्रेशन टेस्टिंग 
 
-The application penetration test should include an examination of how the infrastructure was deployed and secured. It is important to review configuration aspects, no matter how small, to ensure that none are left at a default setting that may be vulnerable to exploitation.
+आवश्यकताओं का परीक्षण करने, डिजाइन का विश्लेषण करने और कोड समीक्षा करने के बाद, यह माना जा सकता है कि सभी समस्याओं को पकड़ लिया गया है। उम्मीद है कि ऐसा ही हो, लेकिन अनुप्रयोग के परिनियोजन (deploy) के बाद पेनेट्रेशन टेस्टिंग करना यह सुनिश्चित करने के लिए एक अतिरिक्त जांच प्रदान करता है कि कुछ भी छूट न गया हो।
 
-## Phase 5 During Maintenance and Operations
+### चरण 4.2: कॉन्फ़िगरेशन प्रबंधन परीक्षण 
 
-### Phase 5.1 Conduct Operational Management Reviews
+अनुप्रयोग पेनेट्रेशन टेस्ट में इस बात की जांच शामिल होनी चाहिए कि बुनियादी ढांचे (infrastructure) को कैसे तैनात और सुरक्षित किया गया था। कॉन्फ़िगरेशन के पहलुओं की समीक्षा करना महत्वपूर्ण है, चाहे वे कितने भी छोटे क्यों न हों, ताकि यह सुनिश्चित किया जा सके कि उनमें से कोई भी डिफ़ॉल्ट सेटिंग पर न छूटा हो जो शोषण (exploitation) के प्रति संवेदनशील हो सकता है।
 
-There needs to be a process in place which details how the operational side of both the application and infrastructure is managed.
+## चरण 5: रखरखाव और संचालन के दौरान
 
-### Phase 5.2 Conduct Periodic Health Checks
+### चरण 5.1: परिचालन प्रबंधन समीक्षा आयोजित करें
 
-Monthly or quarterly health checks should be performed on both the application and infrastructure to ensure no new security risks have been introduced and that the level of security is still intact.
+एक ऐसी प्रक्रिया होनी चाहिए जो विस्तार से बताए कि अनुप्रयोग और बुनियादी ढांचे दोनों के परिचालन पक्ष (operational side) को कैसे प्रबंधित किया जाता है।
 
-### Phase 5.3 Ensure Change Verification
+### चरण 5.2: समय-समय पर स्वास्थ्य जांच 
 
-After every change has been approved and tested in the QA environment and deployed into the production environment, it is vital that the change is checked to ensure that the level of security has not been affected by the change. This should be integrated into the change management process.
+अनुप्रयोग और बुनियादी ढांचे दोनों पर मासिक या त्रैमासिक स्वास्थ्य जांच की जानी चाहिए ताकि यह सुनिश्चित हो सके कि कोई नया सुरक्षा जोखिम पेश नहीं हुआ है और सुरक्षा का स्तर अभी भी बरकरार है।
 
-## A Typical SDLC Testing Workflow
+### चरण 5.3: परिवर्तन सत्यापन सुनिश्चित करें
 
-The following figure shows a typical SDLC Testing Workflow.
+QA वातावरण में प्रत्येक परिवर्तन के अनुमोदित और परीक्षण होने और उत्पादन वातावरण (production environment) में तैनात होने के बाद, यह महत्वपूर्ण है कि परिवर्तन की जाँच की जाए ताकि यह सुनिश्चित हो सके कि सुरक्षा का स्तर परिवर्तन से प्रभावित नहीं हुआ है। इसे परिवर्तन प्रबंधन प्रक्रिया (change management process) में एकीकृत किया जाना चाहिए।
+
+## एक विशिष्ट SDLC परीक्षण कार्यप्रवाह 
+
+निम्नलिखित चित्र एक विशिष्ट SDLC परीक्षण कार्यप्रवाह को दर्शाता है।
 
 ![Typical SDLC Testing Workflow](images/Typical_SDLC_Testing_Workflow.gif)\
  *Figure 3-1: Typical SDLC testing workflow*
