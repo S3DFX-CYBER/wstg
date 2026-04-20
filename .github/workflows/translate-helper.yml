@@ -1,0 +1,44 @@
+name: Translate Helper
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "**/*.md"
+
+jobs:
+  translate-helper:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Detect changed Markdown files
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          git diff --name-only "origin/${{ github.base_ref }}...${{ github.sha }}" -- '*.md' > changed_files.txt
+          if [ ! -s changed_files.txt ]; then
+            echo "No markdown changes detected."
+          fi
+
+      - name: Run Sarvam translation helper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SARVAM_API_KEY: ${{ secrets.SARVAM_API_KEY }}
+          SARVAM_API_URL: ${{ vars.SARVAM_API_URL }}
+          SARVAM_MODEL: ${{ vars.SARVAM_MODEL }}
+          SARVAM_SOURCE_LANG: ${{ vars.SARVAM_SOURCE_LANG }}
+          SARVAM_TARGET_LANG: ${{ vars.SARVAM_TARGET_LANG }}
+        run: python3 scripts/sarvam_helper.py --changed-files changed_files.txt --glossary GLOSSARY.json
