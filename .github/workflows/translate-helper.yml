@@ -1,44 +1,66 @@
 name: Translate Helper
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_target:
+    types: [labeled, synchronize]
     paths:
       - "**/*.md"
+  workflow_dispatch: # Allows to run it manually for testing
 
 jobs:
   translate-helper:
-    if: github.event.pull_request.draft == false
+    # Only runs if the PR is not a draft AND has the 'ready-to-translate' label
+    # OR if it's a synchronization update on a PR that already has the label
+    if: |
+      github.event.pull_request.draft == false && 
+      contains(github.event.pull_request.labels.*.name, 'ready-to-translate')
+    
     runs-on: ubuntu-latest
+    
     permissions:
       contents: read
       pull-requests: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository (Base)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          # We check out the BASE (your repo) to get the safe script/glossary
+          # This prevents an attacker from modifying the python script in their PR
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install requests
 
       - name: Detect changed Markdown files
+        id: files
         run: |
-          git fetch origin "${{ github.base_ref }}" --depth=1
-          git diff --name-only "origin/${{ github.base_ref }}...${{ github.sha }}" -- '*.md' > changed_files.txt
+          # Fetching only the PR diff to isolate changed text
+          git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=1
+          git diff --name-only "origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.sha }}" -- '*.md' > changed_files.txt
+          
           if [ ! -s changed_files.txt ]; then
             echo "No markdown changes detected."
+            exit 0
           fi
 
       - name: Run Sarvam translation helper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SARVAM_API_KEY: ${{ secrets.SARVAM_API_KEY }}
-          SARVAM_API_URL: ${{ vars.SARVAM_API_URL }}
-          SARVAM_MODEL: ${{ vars.SARVAM_MODEL }}
-          SARVAM_SOURCE_LANG: ${{ vars.SARVAM_SOURCE_LANG }}
-          SARVAM_TARGET_LANG: ${{ vars.SARVAM_TARGET_LANG }}
-        run: python3 scripts/sarvam_helper.py --changed-files changed_files.txt --glossary GLOSSARY.json
+          SARVAM_API_URL: ${{ vars.SARVAM_API_URL || 'https://api.sarvam.ai/translate' }}
+          SARVAM_MODEL: ${{ vars.SARVAM_MODEL || 'mayura-v1' }}
+          SARVAM_SOURCE_LANG: ${{ vars.SARVAM_SOURCE_LANG || 'en-IN' }}
+          SARVAM_TARGET_LANG: ${{ vars.SARVAM_TARGET_LANG || 'hi-IN' }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python3 scripts/sarvam_helper.py \
+            --changed-files changed_files.txt \
+            --glossary GLOSSARY.json \
+            --pr-number $PR_NUMBER
