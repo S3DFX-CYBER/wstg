@@ -1,0 +1,11 @@
+{
+  "Buffer Overflow": "Buffer Overflow",
+  "Cross-Site Scripting": "Cross-Site Scripting",
+  "SQL Injection": "SQL Injection",
+  "Command Injection": "Command Injection",
+  "Authentication": "Authentication",
+  "Authorization": "Authorization",
+  "Session Management": "Session Management",
+  "Cryptography": "Cryptography",
+  "OWASP": "OWASP"
+}
