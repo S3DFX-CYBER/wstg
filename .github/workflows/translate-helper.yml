@@ -9,7 +9,6 @@ on:
 
 jobs:
   translate-helper:
-    # Simplified 'if' to handle the null/false inconsistency
     if: |
       contains(github.event.pull_request.labels.*.name, 'ready-to-translate') &&
       github.event.pull_request.draft != true
@@ -25,6 +24,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+          # We fetch the base branch so we have it locally for comparison
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,15 +38,19 @@ jobs:
       - name: Detect changes
         id: files
         run: |
-          # Use head.sha and base.ref from the event to ensure we get the right diff
-          git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=1
-          git diff --name-only "origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.sha }}" -- '*.md' > changed_files.txt
+          # 1. Explicitly fetch the HEAD commit from the contributor's fork
+          # Without this, git diff will fail because it doesn't know the SHA
+          git fetch origin ${{ github.event.pull_request.head.sha }} --depth=1
+          
+          # 2. Compare the BASE SHA (your master) with the HEAD SHA (their PR)
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} -- '*.md' > changed_files.txt
           
           if [ ! -s changed_files.txt ]; then
             echo "No markdown changes detected."
-            # Don't fail the job, just stop here
             exit 0
           fi
+          echo "Changes detected in:"
+          cat changed_files.txt
 
       - name: Run Sarvam Helper
         env:
