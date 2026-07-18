@@ -1,131 +1,131 @@
-# Penetration Testing Methodologies
+*पेनेट्रेशन टेस्टिंग मेथोडोलॉजीज़*
 
-## Summary
+*सारांश*
 
-- [OWASP Testing Guides](#owasp-testing-guides)
-    - Web Security Testing Guide (WSTG)
-    - Mobile Security Testing Guide (MSTG)
-    - Firmware Security Testing Methodology
-- [Penetration Testing Execution Standard](#penetration-testing-execution-standard)
-- [PCI Penetration Testing Guide](#pci-penetration-testing-guide)
-    - [PCI DSS Penetration Testing Guidance](#pci-dss-penetration-testing-guidance)
-    - [PCI DSS Penetration Testing Requirements](#pci-dss-penetration-testing-requirements)
-- [Penetration Testing Framework](#penetration-testing-framework)
-- [Technical Guide to Information Security Testing and Assessment](#technical-guide-to-information-security-testing-and-assessment)
-- [Open Source Security Testing Methodology Manual](#open-source-security-testing-methodology-manual)
-- [References](#references)
+• OWASP टेस्टिंग गाइड्स
+• वेब सिक्योरिटी टेस्टिंग गाइड (WSTG)
+• मोबाइल सिक्योरिटी टेस्टिंग गाइड (MSTG)
+• फर्मवेयर सिक्योरिटी टेस्टिंग मेथोडोलॉजी
+• पेनेट्रेशन टेस्टिंग एक्जीक्यूशन स्टैंडर्ड
+• PCI पेनेट्रेशन टेस्टिंग गाइड
+• PCI DSS पेनेट्रेशन टेस्टिंग गाइडेंस
+• PCI DSS पेनेट्रेशन टेस्टिंग रिक्वायरमेंट्स
+• पेनेट्रेशन टेस्टिंग फ्रेमवर्क
+• इंफॉर्मेशन सिक्योरिटी टेस्टिंग और असेसमेंट के लिए टेक्निकल गाइड
+• ओपन सोर्स सिक्योरिटी टेस्टिंग मेथोडोलॉजी मैनुअल
+• संदर्भ
 
-## OWASP Testing Guides
+*OWASP टेस्टिंग गाइड्स*
 
-In terms of technical security testing execution, the OWASP testing guides are highly recommended. Depending on the types of the applications, the testing guides are listed below for the web/cloud services, Mobile app (Android/iOS), or IoT firmware respectively.
+तकनीकी सुरक्षा परीक्षण निष्पादन के संदर्भ में, OWASP टेस्टिंग गाइड्स अत्यधिक अनुशंसित हैं। एप्लिकेशन के प्रकारों के आधार पर, वेब/क्लाउड सेवाओं, मोबाइल ऐप (Android/iOS), या IoT फर्मवेयर के लिए नीचे सूचीबद्ध टेस्टिंग गाइड्स का उपयोग किया जाना चाहिए।
 
-- [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-- [OWASP Mobile Security Testing Guide](https://owasp.org/www-project-mobile-security-testing-guide/)
-- [OWASP Firmware Security Testing Methodology](https://github.com/scriptingxss/owasp-fstm)
+• OWASP वेब सिक्योरिटी टेस्टिंग गाइड
+• OWASP मोबाइल सिक्योरिटी टेस्टिंग गाइड
+• OWASP फर्मवेयर सिक्योरिटी टेस्टिंग मेथोडोलॉजी
 
-## Penetration Testing Execution Standard
+*पेनेट्रेशन टेस्टिंग एक्जीक्यूशन स्टैंडर्ड*
 
-Penetration Testing Execution Standard (PTES) defines penetration testing as 7 phases. Particularly, PTES Technical Guidelines give hands-on suggestions on testing procedures, and recommendation for security testing tools.
+पेनेट्रेशन टेस्टिंग एक्जीक्यूशन स्टैंडर्ड (PTES) पेनेट्रेशन टेस्टिंग को 7 चरणों में परिभाषित करता है। विशेष रूप से, PTES टेक्निकल गाइडलाइन्स परीक्षण प्रक्रियाओं पर व्यावहारिक सुझाव और सुरक्षा परीक्षण उपकरणों के लिए सिफारिशें प्रदान करती हैं।
 
-- Pre-engagement Interactions
-- Intelligence Gathering
-- Threat Modeling
-- Vulnerability Analysis
-- Exploitation
-- Post Exploitation
-- Reporting
+• प्री-एंगेजमेंट इंटरैक्शन
+• इंटेलिजेंस गैदरिंग
+• थ्रेट मॉडलिंग
+• वल्नरेबिलिटी एनालिसिस
+• एक्सप्लॉइटेशन
+• पोस्ट एक्सप्लॉइटेशन
+• रिपोर्टिंग
 
-[PTES Technical Guidelines](http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines)
+PTES टेक्निकल गाइडलाइन्स
 
-## PCI Penetration Testing Guide
+*PCI पेनेट्रेशन टेस्टिंग गाइड*
 
-Payment Card Industry Data Security Standard (PCI DSS) Requirement 11.3 defines the penetration testing. PCI also defines Penetration Testing Guidance.
+पेमेंट कार्ड इंडस्ट्री डेटा सिक्योरिटी स्टैंडर्ड (PCI DSS) रिक्वायरमेंट 11.3 पेनेट्रेशन टेस्टिंग को परिभाषित करता है। PCI पेनेट्रेशन टेस्टिंग गाइडेंस भी परिभाषित करता है।
 
-### PCI DSS Penetration Testing Guidance
+*PCI DSS पेनेट्रेशन टेस्टिंग गाइडेंस*
 
-The PCI DSS Penetration testing guideline provides guidance on the following:
+PCI DSS पेनेट्रेशन टेस्टिंग गाइडलाइन्स निम्नलिखित पर मार्गदर्शन प्रदान करती हैं:
 
-- Penetration Testing Components
-- Qualifications of a Penetration Tester
-- Penetration Testing Methodologies
-- Penetration Testing Reporting Guidelines
+• पेनेट्रेशन टेस्टिंग कंपोनेंट्स
+• पेनेट्रेशन टेस्टर की योग्यताएं
+• पेनेट्रेशन टेस्टिंग मेथोडोलॉजीज़
+• पेनेट्रेशन टेस्टिंग रिपोर्टिंग गाइडलाइन्स
 
-### PCI DSS Penetration Testing Requirements
+*PCI DSS पेनेट्रेशन टेस्टिंग रिक्वायरमेंट्स*
 
-The PCI DSS requirement refer to Payment Card Industry Data Security Standard (PCI DSS) Requirement 11.3
+PCI DSS रिक्वायरमेंट पेमेंट कार्ड इंडस्ट्री डेटा सिक्योरिटी स्टैंडर्ड (PCI DSS) रिक्वायरमेंट 11.3 का संदर्भ देती है
 
-- Based on industry-accepted approaches
-- Coverage for CDE and critical systems
-- Includes external and internal testing
-- Test to validate scope reduction
-- Application-layer testing
-- Network-layer tests for network and OS
+• उद्योग-स्वीकृत दृष्टिकोणों पर आधारित
+• CDE और महत्वपूर्ण प्रणालियों के लिए कवरेज
+• बाहरी और आंतरिक परीक्षण शामिल हैं
+• स्कोप रिडक्शन को मान्य करने के लिए परीक्षण
+• एप्लिकेशन-लेयर परीक्षण
+• नेटवर्क और OS के लिए नेटवर्क-लेयर परीक्षण
 
-[PCI DSS Penetration Test Guidance](https://www.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf)
+PCI DSS पेनेट्रेशन टेस्ट गाइडेंस
 
-## Penetration Testing Framework
+*पेनेट्रेशन टेस्टिंग फ्रेमवर्क*
 
-The Penetration Testing Framework (PTF) provides comprehensive hands-on penetration testing guide. It also lists usages of the security testing tools in each testing category. The major area of penetration testing includes:
+पेनेट्रेशन टेस्टिंग फ्रेमवर्क (PTF) व्यापक व्यावहारिक पेनेट्रेशन टेस्टिंग गाइड प्रदान करता है। यह प्रत्येक परीक्षण श्रेणी में सुरक्षा परीक्षण उपकरणों के उपयोग को भी सूचीबद्ध करता है। पेनेट्रेशन टेस्टिंग के मुख्य क्षेत्रों में शामिल हैं:
 
-- Network Footprinting (Reconnaissance)
-- Discovery & Probing
-- Enumeration
-- Password cracking
-- Vulnerability Assessment
-- AS/400 Auditing
-- Bluetooth Specific Testing
-- Cisco Specific Testing
-- Citrix Specific Testing
-- Network Backbone
-- Server Specific Tests
-- VoIP Security
-- Wireless Penetration
-- Physical Security
-- Final Report - template
+• नेटवर्क फुटप्रिंटिंग (रेकनॉसेंस)
+• डिस्कवरी और प्रोबिंग
+• गणना (Enumeration)
+• पासवर्ड क्रैकिंग
+• वल्नरेबिलिटी असेसमेंट
+• AS/400 ऑडिटिंग
+• ब्लूटूथ स्पेसिफिक टेस्टिंग
+• सिस्को स्पेसिफिक टेस्टिंग
+• साइट्रिक्स स्पेसिफिक टेस्टिंग
+• नेटवर्क बैकबोन
+• सर्वर स्पेसिफिक टेस्ट्स
+• VoIP सुरक्षा
+• वायरलेस पेनेट्रेशन
+• फिजिकल सिक्योरिटी
+• अंतिम रिपोर्ट - टेम्पलेट
 
-[Penetration Testing Framework](https://web.archive.org/web/20130925044437/http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html)
+पेनेट्रेशन टेस्टिंग फ्रेमवर्क
 
-## Technical Guide to Information Security Testing and Assessment
+*इंफॉर्मेशन सिक्योरिटी टेस्टिंग और असेसमेंट के लिए टेक्निकल गाइड*
 
-Technical Guide to Information Security Testing and Assessment (NIST 800-115) was published by NIST, it includes some assessment techniques listed below.
+इंफॉर्मेशन सिक्योरिटी टेस्टिंग और असेसमेंट के लिए टेक्निकल गाइड (NIST 800-115) NIST द्वारा प्रकाशित किया गया था, इसमें नीचे सूचीबद्ध कुछ मूल्यांकन तकनीकें शामिल हैं।
 
-- Review Techniques
-- Target Identification and Analysis Techniques
-- Target Vulnerability Validation Techniques
-- Security Assessment Planning
-- Security Assessment Execution
-- Post-Testing Activities
+• समीक्षा तकनीकें
+• लक्ष्य पहचान और विश्लेषण तकनीकें
+• लक्ष्य वल्नरेबिलिटी सत्यापन तकनीकें
+• सुरक्षा मूल्यांकन योजना
+• सुरक्षा मूल्यांकन निष्पादन
+• परीक्षण के बाद की गतिविधियां
 
-For further details see: [NIST 800-115](https://csrc.nist.gov/publications/detail/sp/800-115/final).
+अधिक विवरण के लिए देखें: NIST 800-115.
 
-## Open Source Security Testing Methodology Manual
+*ओपन सोर्स सिक्योरिटी टेस्टिंग मेथोडोलॉजी मैनुअल*
 
-The Open Source Security Testing Methodology Manual (OSSTMM) is a methodology to test the operational security of physical locations, workflow, human security testing, physical security testing, wireless security testing, telecommunication security testing, data networks security testing and compliance. OSSTMM can be supporting reference of ISO 27001 instead of a hands-on or technical application penetration testing guide.
+ओपन सोर्स सिक्योरिटी टेस्टिंग मेथोडोलॉजी मैनुअल (OSSTMM) भौतिक स्थानों, वर्कफ़्लो, मानव सुरक्षा परीक्षण, भौतिक सुरक्षा परीक्षण, वायरलेस सुरक्षा परीक्षण, दूरसंचार सुरक्षा परीक्षण, डेटा नेटवर्क सुरक्षा परीक्षण और अनुपालन की परिचालन सुरक्षा का परीक्षण करने की एक पद्धति है। OSSTMM को ISO 27001 के लिए एक सहायक संदर्भ के रूप में उपयोग किया जा सकता है, न कि व्यावहारिक या तकनीकी एप्लिकेशन पेनेट्रेशन टेस्टिंग गाइड के रूप में।
 
-OSSTMM includes the following key sections:
+OSSTMM में निम्नलिखित प्रमुख अनुभाग शामिल हैं:
 
-- Security Analysis
-- Operational Security Metrics
-- Trust Analysis
-- Work Flow
-- Human Security Testing
-- Physical Security Testing
-- Wireless Security Testing
-- Telecommunications Security Testing
-- Data Networks Security Testing
-- Compliance Regulations
-- Reporting with the STAR (Security Test Audit Report)
+• सुरक्षा विश्लेषण
+• परिचालन सुरक्षा मेट्रिक्स
+• विश्वास विश्लेषण
+• वर्कफ़्लो
+• मानव सुरक्षा परीक्षण
+• भौतिक सुरक्षा परीक्षण
+• वायरलेस सुरक्षा परीक्षण
+• दूरसंचार सुरक्षा परीक्षण
+• डेटा नेटवर्क सुरक्षा परीक्षण
+• अनुपालन विनियम
+• STAR (सुरक्षा परीक्षण ऑडिट रिपोर्ट) के साथ रिपोर्टिंग
 
-[Open Source Security Testing Methodology Manual](https://www.isecom.org/OSSTMM.3.pdf)
+ओपन सोर्स सिक्योरिटी टेस्टिंग मेथोडोलॉजी मैनुअल
 
-## References
+*संदर्भ*
 
-- [PCI Data Security Standard - Penetration Testing Guidance](https://www.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf)
-- [PTES Standard](http://www.pentest-standard.org/index.php/Main_Page)
-- [Open Source Security Testing Methodology Manual (OSSTMM)](https://www.isecom.org/research.html#content5-9d)
-- [Technical Guide to Information Security Testing and Assessment NIST SP 800-115](https://csrc.nist.gov/publications/detail/sp/800-115/final)
-- [HIPAA Security Testing Guidance](https://www.hhs.gov/hipaa/for-professionals/security/guidance/cybersecurity/index.html)
-- [Penetration Testing Framework 0.59 (Archived)](https://web.archive.org/web/20130925044437/http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html)
-- [OWASP Mobile Security Testing Guide](https://owasp.org/www-project-mobile-security-testing-guide/)
-- [Kali Linux](https://www.kali.org/)
-- [Information Supplement: Requirement 11.3 Penetration Testing](https://www.pcisecuritystandards.org/pdfs/infosupp_11_3_penetration_testing.pdf)
+• PCI डेटा सिक्योरिटी स्टैंडर्ड - पेनेट्रेशन टेस्टिंग गाइडेंस
+• PTES स्टैंडर्ड
+• ओपन सोर्स सिक्योरिटी टेस्टिंग मेथोडोलॉजी मैनुअल (OSSTMM)
+• इंफॉर्मेशन सिक्योरिटी टेस्टिंग और असेसमेंट के लिए टेक्निकल गाइड NIST SP 800-115
+• HIPAA सुरक्षा परीक्षण मार्गदर्शन
+• पेनेट्रेशन टेस्टिंग फ्रेमवर्क 0.59 (आर्काइव्ड)
+• OWASP मोबाइल सिक्योरिटी टेस्टिंग गाइड
+• काली लिनक्स
+• जानकारी पूरक: रिक्वायरमेंट 11.3 पेनेट्रेशन टेस्टिंग
